@@ -24,13 +24,6 @@ export const allPapers = [
     { year: "2025", session: "November", subject: "Accounting", paperName: "Answer Book P2 (Afrikaans)", paperFile: "Accounting_P2_Nov_2025_Answer_Book_Afr.pdf", memoFile: null, hasMemo: false },
     { year: "2025", session: "November", subject: "Accounting", paperName: "Answer Book P2 (English)", paperFile: "Accounting_P2_Nov_2025_Answer_Book_Eng.pdf", memoFile: null, hasMemo: false },
 
-    // ========== ACCOUNTING 2024 ==========
-    { year: "2024", session: "November", subject: "Accounting", paperName: "Paper 1 (English)", paperFile: "Accounting_P1_Nov_2024_Eng.pdf", memoFile: "Accounting_P1_Nov_2024_Memo_Eng.pdf", hasMemo: true },
-    { year: "2024", session: "November", subject: "Accounting", paperName: "Paper 1 (Afrikaans)", paperFile: "Accounting_P1_Nov_2024_Afr.pdf", memoFile: "Accounting_P1_Nov_2024_Memo_Afr.pdf", hasMemo: true },
-    { year: "2024", session: "November", subject: "Accounting", paperName: "Paper 2 (English)", paperFile: "Accounting_P2_Nov_2024_Eng.pdf", memoFile: "Accounting_P2_Nov_2024_Memo_Eng.pdf", hasMemo: true },
-    { year: "2024", session: "November", subject: "Accounting", paperName: "Paper 2 (Afrikaans)", paperFile: "Accounting_P2_Nov_2024_Afr.pdf", memoFile: "Accounting_P2_Nov_2024_Memo_Afr.pdf", hasMemo: true },
-
-
     // ========== MATHEMATICS 2025 ==========
     { year: "2025", session: "November", subject: "Mathematics", paperName: "Paper 1", paperFile: "Mathematics P1 Nov 2025 Eng.pdf", memoFile: "Mathematics P1 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
     { year: "2025", session: "November", subject: "Mathematics", paperName: "Paper 2", paperFile: "Mathematics P2 Nov 2025 Eng.pdf", memoFile: "Mathematics P2 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },

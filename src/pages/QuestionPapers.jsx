@@ -11,7 +11,7 @@ import {
 import Seo from "../components/Seo";
 
 function QuestionPapers() {
-    const [selectedYear, setSelectedYear] = useState("2024");
+    const [selectedYear, setSelectedYear] = useState("2025");
     const [selectedSession, setSelectedSession] = useState("November");
     const [selectedSubject, setSelectedSubject] = useState("All");
     const [selectedType, setSelectedType] = useState("All");
