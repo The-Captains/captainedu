@@ -4,4 +4,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://captainedu.co.za/sitemap.xml
+Sitemap: https://captainedu.captainstech.co.za/sitemap.xml
