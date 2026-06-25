@@ -212,7 +212,7 @@ function Apply() {
     // Send auto-reply email using EmailJS
     const sendAutoReply = async (email, userName, submissionId, formData) => {
         try {
-            emailjs.init("hPNOARzBoj2eB1IpR");
+            emailjs.init(import.meta.env.VITE_PUBLIC_KEY || import.meta.env.VITE_API_KEY);
 
             const now = new Date();
             const submissionDate = now.toLocaleDateString('en-ZA', {
@@ -242,8 +242,8 @@ function Apply() {
             };
 
             const response = await emailjs.send(
-                "service_djjqu42",
-                "template_jfyo1nj",
+                import.meta.env.VITE_SERVICE_ID,
+                import.meta.env.VITE_TEMPLATE_ID,
                 templateParams
             );
             
