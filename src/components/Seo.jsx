@@ -13,8 +13,8 @@ function Seo({
     const siteTitle = "Captain Edu - University Application Assistance";
     const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
     const fullDescription = description || "Get professional help with university and TVET college applications in South Africa. APS calculator, past papers, bursaries, and more.";
-    const fullImage = image || "https://captainedu.co.za/og-image.jpg";
-    const fullUrl = url || "https://captainedu.co.za";
+    const fullImage = image || "https://captainedu.captainstech.co.za/og-image.jpg";
+    const fullUrl = url || "https://captainedu.captainstech.co.za";
 
     return (
         <Helmet>
