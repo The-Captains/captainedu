@@ -7,8 +7,8 @@ function StructuredData() {
         "@type": "EducationalOrganization",
         "name": "Captain Edu",
         "description": "University and TVET college application assistance platform for South African students.",
-        "url": "https://captainedu.co.za",
-        "logo": "https://captainedu.co.za/logo.png",
+        "url": "https://captainedu.captainstech.co.za",
+        "logo": "https://captainedu.captainstech.co.za/logo.png",
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+27772528646",

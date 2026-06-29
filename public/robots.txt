@@ -1,6 +1,11 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
+Allow: /aps-calculator
+Allow: /prospectus
+Allow: /bursaries
+Allow: /question-papers
+Allow: /apply
 Disallow: /admin/
 Disallow: /private/
 
