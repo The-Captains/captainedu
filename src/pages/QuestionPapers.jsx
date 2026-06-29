@@ -1,14 +1,14 @@
 // pages/QuestionPapers.jsx
 import { useState } from "react";
-import { 
-    allPapers, 
-    languageSubjects, 
-    years, 
-    sessions, 
+import {
+    allPapers,
+    languageSubjects,
+    years,
+    sessions,
     getAllSubjects,
-   // cleanFileName 
 } from "../data/questionPapersData";
 import Seo from "../components/Seo";
+import { trackEvent } from "../components/Analytics";
 
 function QuestionPapers() {
     const [selectedYear, setSelectedYear] = useState("2025");
@@ -23,7 +23,7 @@ function QuestionPapers() {
         const matchSession = paper.session === selectedSession;
         const matchSubject = selectedSubject === "All" || paper.subject === selectedSubject;
         const matchSearch = paper.subject.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           paper.paperName.toLowerCase().includes(searchTerm.toLowerCase());
+            paper.paperName.toLowerCase().includes(searchTerm.toLowerCase());
         return matchYear && matchSession && matchSubject && matchSearch;
     });
 
@@ -39,7 +39,7 @@ function QuestionPapers() {
     // Filter by type
     const getDisplayItems = (paper) => {
         const items = [];
-        
+
         if (selectedType === "All" || selectedType === "Question Paper") {
             items.push({
                 type: "Question Paper",
@@ -48,7 +48,7 @@ function QuestionPapers() {
                 icon: "📄"
             });
         }
-        
+
         if (paper.hasMemo && paper.memoFile && (selectedType === "All" || selectedType === "Memo")) {
             items.push({
                 type: "Memo",
@@ -57,7 +57,7 @@ function QuestionPapers() {
                 icon: "📝"
             });
         }
-        
+
         return items;
     };
 
@@ -79,12 +79,60 @@ function QuestionPapers() {
         return `/question-papers/${fileName}`;
     };
 
+    // Track functions
+    const handleYearFilter = (year) => {
+        setSelectedYear(year);
+        trackEvent('Past Papers', 'Filter Year', year);
+    };
+
+    const handleSessionFilter = (session) => {
+        setSelectedSession(session);
+        trackEvent('Past Papers', 'Filter Session', session);
+    };
+
+    const handleSubjectFilter = (subject) => {
+        setSelectedSubject(subject);
+        trackEvent('Past Papers', 'Filter Subject', subject);
+    };
+
+    const handleTypeFilter = (type) => {
+        setSelectedType(type);
+        trackEvent('Past Papers', 'Filter Type', type);
+    };
+
+    const handleSearch = (e) => {
+        const value = e.target.value;
+        setSearchTerm(value);
+        if (value.length > 2) {
+            trackEvent('Past Papers', 'Search', value);
+        }
+    };
+
     // Open file in new tab
-    const openFile = (fileName) => {
+    const openFile = (fileName, paperName, type) => {
         if (!fileName) {
             alert("File not available");
             return;
         }
+        const url = getFileUrl(fileName);
+        window.open(url, '_blank');
+
+        // Track paper view
+        trackEvent('Past Papers', 'View', `${paperName} - ${type}`);
+    };
+
+    // Track paper download
+    const handleDownload = (fileName, paperName, type, e) => {
+        e.stopPropagation();
+        if (!fileName) {
+            alert("File not available");
+            return;
+        }
+
+        // Track download
+        trackEvent('Past Papers', 'Download', `${paperName} - ${type}`);
+
+        // Open in new tab (or download)
         const url = getFileUrl(fileName);
         window.open(url, '_blank');
     };
@@ -96,6 +144,7 @@ function QuestionPapers() {
         setSelectedSubject("All");
         setSelectedType("All");
         setSearchTerm("");
+        trackEvent('Past Papers', 'Reset Filters', 'All filters reset');
     };
 
     // Count total items
@@ -354,8 +403,8 @@ function QuestionPapers() {
                     <span style={paperCountStyle}>{allItems.length} file{allItems.length !== 1 ? 's' : ''}</span>
                 </div>
                 {allItems.map((item, idx) => (
-                    <div 
-                        key={idx} 
+                    <div
+                        key={idx}
                         style={paperItemStyle}
                         onMouseEnter={(e) => {
                             e.currentTarget.style.background = '#f8fafc';
@@ -363,7 +412,7 @@ function QuestionPapers() {
                         onMouseLeave={(e) => {
                             e.currentTarget.style.background = 'transparent';
                         }}
-                        onClick={() => openFile(item.file)}
+                        onClick={() => openFile(item.file, item.name, item.type)}
                     >
                         <div style={paperNameStyle}>
                             {item.icon} {item.name}
@@ -376,7 +425,7 @@ function QuestionPapers() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={linkStyle}
-                                onClick={(e) => e.stopPropagation()}
+                                onClick={(e) => handleDownload(item.file, item.name, item.type, e)}
                                 onMouseEnter={(e) => {
                                     e.target.style.color = '#0f766e';
                                     e.target.style.textDecoration = 'underline';
@@ -397,132 +446,131 @@ function QuestionPapers() {
 
     return (
         <>
-
-        <Seo 
+            <Seo
                 title="Past Exam Papers & Memos"
                 description="Download free past exam papers and memos for South African high school subjects. Practice with real exam questions."
                 keywords="past exam papers, matric papers, NSC papers, exam papers with memos, free downloads"
             />
 
-        <div style={containerStyle}>
-            <h1 style={titleStyle}>📝 Past Exam Papers</h1>
-            <p style={subtitleStyle}>Free download of question papers and memos</p>
+            <div style={containerStyle}>
+                <h1 style={titleStyle}>📝 Past Exam Papers</h1>
+                <p style={subtitleStyle}>Free download of question papers and memos</p>
 
-            {/* Filters */}
-            <div style={filterSectionStyle}>
-                <div style={filterGroupStyle}>
-                    <div style={filterRowStyle}>
-                        <span style={filterLabelStyle}>📅</span>
-                        <div style={buttonGroupStyle}>
-                            {years.map(year => (
-                                <button
-                                    key={year}
-                                    style={filterButtonStyle(selectedYear === year)}
-                                    onClick={() => setSelectedYear(year)}
-                                >
-                                    {year}
-                                </button>
-                            ))}
+                {/* Filters */}
+                <div style={filterSectionStyle}>
+                    <div style={filterGroupStyle}>
+                        <div style={filterRowStyle}>
+                            <span style={filterLabelStyle}>📅</span>
+                            <div style={buttonGroupStyle}>
+                                {years.map(year => (
+                                    <button
+                                        key={year}
+                                        style={filterButtonStyle(selectedYear === year)}
+                                        onClick={() => handleYearFilter(year)}
+                                    >
+                                        {year}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
-                    </div>
 
-                    <div style={filterRowStyle}>
-                        <span style={filterLabelStyle}>📋</span>
-                        <div style={buttonGroupStyle}>
-                            {sessions.map(session => (
-                                <button
-                                    key={session}
-                                    style={filterButtonStyle(selectedSession === session)}
-                                    onClick={() => setSelectedSession(session)}
-                                >
-                                    {session}
-                                </button>
-                            ))}
+                        <div style={filterRowStyle}>
+                            <span style={filterLabelStyle}>📋</span>
+                            <div style={buttonGroupStyle}>
+                                {sessions.map(session => (
+                                    <button
+                                        key={session}
+                                        style={filterButtonStyle(selectedSession === session)}
+                                        onClick={() => handleSessionFilter(session)}
+                                    >
+                                        {session}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
-                    </div>
 
-                    <div style={filterRowStyle}>
-                        <span style={filterLabelStyle}>🔍</span>
-                        <select 
-                            style={selectStyle}
-                            value={selectedSubject}
-                            onChange={(e) => setSelectedSubject(e.target.value)}
-                        >
-                            {getAllSubjects().map(subject => (
-                                <option key={subject} value={subject}>{subject}</option>
-                            ))}
-                        </select>
-                        <select 
-                            style={selectStyle}
-                            value={selectedType}
-                            onChange={(e) => setSelectedType(e.target.value)}
-                        >
-                            <option value="All">All Files</option>
-                            <option value="Question Paper">📄 Papers</option>
-                            <option value="Memo">📝 Memos</option>
-                        </select>
-                        <input
-                            type="text"
-                            placeholder="Search..."
-                            style={searchInputStyle}
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                            onFocus={(e) => e.target.style.borderColor = '#0d9488'}
-                            onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
-                        />
-                        <button
-                            style={resetButtonStyle}
-                            onClick={resetFilters}
-                            onMouseEnter={(e) => {
-                                e.target.style.background = '#e2e8f0';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.target.style.background = 'white';
-                            }}
-                        >
-                            Reset
-                        </button>
+                        <div style={filterRowStyle}>
+                            <span style={filterLabelStyle}>🔍</span>
+                            <select
+                                style={selectStyle}
+                                value={selectedSubject}
+                                onChange={(e) => handleSubjectFilter(e.target.value)}
+                            >
+                                {getAllSubjects().map(subject => (
+                                    <option key={subject} value={subject}>{subject}</option>
+                                ))}
+                            </select>
+                            <select
+                                style={selectStyle}
+                                value={selectedType}
+                                onChange={(e) => handleTypeFilter(e.target.value)}
+                            >
+                                <option value="All">All Files</option>
+                                <option value="Question Paper">📄 Papers</option>
+                                <option value="Memo">📝 Memos</option>
+                            </select>
+                            <input
+                                type="text"
+                                placeholder="Search..."
+                                style={searchInputStyle}
+                                value={searchTerm}
+                                onChange={handleSearch}
+                                onFocus={(e) => e.target.style.borderColor = '#0d9488'}
+                                onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
+                            />
+                            <button
+                                style={resetButtonStyle}
+                                onClick={resetFilters}
+                                onMouseEnter={(e) => {
+                                    e.target.style.background = '#e2e8f0';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.background = 'white';
+                                }}
+                            >
+                                Reset
+                            </button>
+                        </div>
                     </div>
                 </div>
+
+                {/* Stats */}
+                {totalItems > 0 && (
+                    <div style={statsStyle}>
+                        <span style={statsTextStyle}>
+                            📚 <span style={statsCountStyle}>{totalItems}</span> files ·
+                            <span style={statsCountStyle}> {Object.keys(papersBySubject).length}</span> subjects
+                        </span>
+                        <span style={statsTextStyle}>
+                            {selectedYear} • {selectedSession}
+                        </span>
+                    </div>
+                )}
+
+                {/* Results */}
+                {Object.keys(nonLanguages).length === 0 && Object.keys(languages).length === 0 ? (
+                    <div style={noPapersStyle}>
+                        <div style={noPapersTitleStyle}>📂 No papers found</div>
+                        <div style={noPapersSubStyle}>Try changing your filters</div>
+                    </div>
+                ) : (
+                    <>
+                        {Object.keys(nonLanguages).length > 0 && (
+                            <div style={categoryStyle}>
+                                <h2 style={categoryTitleStyle}>📘 Non-Languages</h2>
+                                {Object.entries(nonLanguages).map(([subject, papers]) => renderSubjectTable(subject, papers))}
+                            </div>
+                        )}
+
+                        {Object.keys(languages).length > 0 && (
+                            <div style={categoryStyle}>
+                                <h2 style={categoryTitleStyle}>📖 Languages</h2>
+                                {Object.entries(languages).map(([subject, papers]) => renderSubjectTable(subject, papers))}
+                            </div>
+                        )}
+                    </>
+                )}
             </div>
-
-            {/* Stats */}
-            {totalItems > 0 && (
-                <div style={statsStyle}>
-                    <span style={statsTextStyle}>
-                        📚 <span style={statsCountStyle}>{totalItems}</span> files · 
-                        <span style={statsCountStyle}> {Object.keys(papersBySubject).length}</span> subjects
-                    </span>
-                    <span style={statsTextStyle}>
-                        {selectedYear} • {selectedSession}
-                    </span>
-                </div>
-            )}
-
-            {/* Results */}
-            {Object.keys(nonLanguages).length === 0 && Object.keys(languages).length === 0 ? (
-                <div style={noPapersStyle}>
-                    <div style={noPapersTitleStyle}>📂 No papers found</div>
-                    <div style={noPapersSubStyle}>Try changing your filters</div>
-                </div>
-            ) : (
-                <>
-                    {Object.keys(nonLanguages).length > 0 && (
-                        <div style={categoryStyle}>
-                            <h2 style={categoryTitleStyle}>📘 Non-Languages</h2>
-                            {Object.entries(nonLanguages).map(([subject, papers]) => renderSubjectTable(subject, papers))}
-                        </div>
-                    )}
-                    
-                    {Object.keys(languages).length > 0 && (
-                        <div style={categoryStyle}>
-                            <h2 style={categoryTitleStyle}>📖 Languages</h2>
-                            {Object.entries(languages).map(([subject, papers]) => renderSubjectTable(subject, papers))}
-                        </div>
-                    )}
-                </>
-            )}
-        </div>
         </>
     );
 }

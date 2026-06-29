@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { bursaries, categories, levels } from "../data/bursariesData";
 import Seo from "../components/Seo";
+import { trackEvent } from "../components/Analytics";
 
 function Bursaries() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -10,12 +11,46 @@ function Bursaries() {
 
     const filteredBursaries = bursaries.filter(bursary => {
         const matchesSearch = bursary.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                              bursary.provider.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                              bursary.description.toLowerCase().includes(searchTerm.toLowerCase());
+            bursary.provider.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            bursary.description.toLowerCase().includes(searchTerm.toLowerCase());
         const matchesCategory = filterCategory === "All" || bursary.category === filterCategory;
         const matchesLevel = filterLevel === "All" || bursary.level === filterLevel;
         return matchesSearch && matchesCategory && matchesLevel;
     });
+
+    // Track filter changes
+    const handleCategoryFilter = (category) => {
+        setFilterCategory(category);
+        trackEvent('Bursaries', 'Filter Category', category);
+    };
+
+    const handleLevelFilter = (level) => {
+        setFilterLevel(level);
+        trackEvent('Bursaries', 'Filter Level', level);
+    };
+
+    const handleSearch = (e) => {
+        const value = e.target.value;
+        setSearchTerm(value);
+        if (value.length > 2) {
+            trackEvent('Bursaries', 'Search', value);
+        }
+    };
+
+    // Track bursary interactions
+    const handleBursaryWebsite = (bursaryName) => {
+        trackEvent('Bursary', 'Website Click', bursaryName);
+    };
+
+    const handleBursaryApply = (bursaryName) => {
+        trackEvent('Bursary', 'Apply Click', bursaryName);
+    };
+
+    // Track when a user hovers over a bursary (for engagement metrics)
+    const handleBursaryHover = (bursaryName) => {
+        // Only track if not already tracked for this session
+        trackEvent('Bursary', 'View', bursaryName);
+    };
 
     // Styles
     const containerStyle = {
@@ -248,166 +283,168 @@ function Bursaries() {
 
     return (
         <>
-
-        <Seo 
+            <Seo
                 title="Bursaries & Funding Opportunities"
                 description="Find and apply for bursaries, scholarships, and funding opportunities in South Africa. NSFAS, Sasol, Eskom, and more."
                 keywords="bursaries South Africa, NSFAS, scholarships, student funding, financial aid"
             />
-        
-                <div style={containerStyle}>
-            <h1 style={titleStyle}>💰 Bursaries & Funding</h1>
-            <p style={subtitleStyle}>
-                Find and apply for bursaries, scholarships, and funding opportunities
-            </p>
 
-            {/* Filters */}
-            <div style={filterSectionStyle}>
-                <div style={filterGroupStyle}>
-                    <div style={filterRowStyle}>
-                        <span style={filterLabelStyle}>🔍</span>
-                        <input
-                            type="text"
-                            placeholder="Search bursaries..."
-                            style={searchInputStyle}
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                            onFocus={(e) => e.target.style.borderColor = '#0d9488'}
-                            onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
-                        />
-                    </div>
-                    <div style={filterRowStyle}>
-                        <span style={filterLabelStyle}>📋</span>
-                        <div style={buttonGroupStyle}>
-                            {categories.map(cat => (
-                                <button
-                                    key={cat}
-                                    style={filterButtonStyle(filterCategory === cat)}
-                                    onClick={() => setFilterCategory(cat)}
-                                >
-                                    {cat}
-                                </button>
-                            ))}
+            <div style={containerStyle}>
+                <h1 style={titleStyle}>💰 Bursaries & Funding</h1>
+                <p style={subtitleStyle}>
+                    Find and apply for bursaries, scholarships, and funding opportunities
+                </p>
+
+                {/* Filters */}
+                <div style={filterSectionStyle}>
+                    <div style={filterGroupStyle}>
+                        <div style={filterRowStyle}>
+                            <span style={filterLabelStyle}>🔍</span>
+                            <input
+                                type="text"
+                                placeholder="Search bursaries..."
+                                style={searchInputStyle}
+                                value={searchTerm}
+                                onChange={handleSearch}
+                                onFocus={(e) => e.target.style.borderColor = '#0d9488'}
+                                onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
+                            />
                         </div>
-                    </div>
-                    <div style={filterRowStyle}>
-                        <span style={filterLabelStyle}>📚</span>
-                        <div style={buttonGroupStyle}>
-                            {levels.map(level => (
-                                <button
-                                    key={level}
-                                    style={filterButtonStyle(filterLevel === level)}
-                                    onClick={() => setFilterLevel(level)}
-                                >
-                                    {level}
-                                </button>
-                            ))}
+                        <div style={filterRowStyle}>
+                            <span style={filterLabelStyle}>📋</span>
+                            <div style={buttonGroupStyle}>
+                                {categories.map(cat => (
+                                    <button
+                                        key={cat}
+                                        style={filterButtonStyle(filterCategory === cat)}
+                                        onClick={() => handleCategoryFilter(cat)}
+                                    >
+                                        {cat}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                        <div style={filterRowStyle}>
+                            <span style={filterLabelStyle}>📚</span>
+                            <div style={buttonGroupStyle}>
+                                {levels.map(level => (
+                                    <button
+                                        key={level}
+                                        style={filterButtonStyle(filterLevel === level)}
+                                        onClick={() => handleLevelFilter(level)}
+                                    >
+                                        {level}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Stats */}
-            <div style={statsStyle}>
-                <span style={statsTextStyle}>
-                    💰 <span style={statsCountStyle}>{filteredBursaries.length}</span> bursaries found
-                </span>
-            </div>
+                {/* Stats */}
+                <div style={statsStyle}>
+                    <span style={statsTextStyle}>
+                        💰 <span style={statsCountStyle}>{filteredBursaries.length}</span> bursaries found
+                    </span>
+                </div>
 
-            {/* Results */}
-            <div style={gridStyle}>
-                {filteredBursaries.map(bursary => (
-                    <div 
-                        key={bursary.id}
-                        style={cardStyle}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
-                            e.currentTarget.style.transform = 'translateY(-2px)';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.06)';
-                            e.currentTarget.style.transform = 'translateY(0)';
-                        }}
-                    >
-                        <div style={cardHeaderStyle}>
-                            <div style={logoContainerStyle}>
-                                <img 
-                                    src={bursary.logo || '/default-logo.png'}
-                                    alt={bursary.name}
-                                    style={logoStyle}
-                                    onError={(e) => {
-                                        e.target.src = '/default-logo.png';
+                {/* Results */}
+                <div style={gridStyle}>
+                    {filteredBursaries.map(bursary => (
+                        <div
+                            key={bursary.id}
+                            style={cardStyle}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                handleBursaryHover(bursary.name);
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.06)';
+                                e.currentTarget.style.transform = 'translateY(0)';
+                            }}
+                        >
+                            <div style={cardHeaderStyle}>
+                                <div style={logoContainerStyle}>
+                                    <img
+                                        src={bursary.logo || '/default-logo.png'}
+                                        alt={bursary.name}
+                                        style={logoStyle}
+                                        onError={(e) => {
+                                            e.target.src = '/default-logo.png';
+                                        }}
+                                    />
+                                </div>
+                                <div>
+                                    <h3 style={cardTitleStyle}>{bursary.name}</h3>
+                                    <div style={providerStyle}>by {bursary.provider}</div>
+                                </div>
+                            </div>
+
+                            <div style={badgeContainerStyle}>
+                                <span style={badgeStyle(bursary.category)}>{bursary.category}</span>
+                                <span style={levelBadgeStyle}>{bursary.level}</span>
+                                <span style={amountBadgeStyle}>{bursary.amount}</span>
+                                <span style={{ fontSize: '11px', padding: '2px 10px', borderRadius: '12px', fontWeight: '500', background: '#fee2e2', color: '#dc2626' }}>
+                                    ⏰ {bursary.deadline}
+                                </span>
+                            </div>
+
+                            <div style={descriptionStyle}>
+                                {bursary.description}
+                            </div>
+
+                            <div style={footerStyle}>
+                                <a
+                                    href={bursary.website}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={linkStyle}
+                                    onClick={() => handleBursaryWebsite(bursary.name)}
+                                    onMouseEnter={(e) => {
+                                        e.target.style.color = '#0f766e';
+                                        e.target.style.textDecoration = 'underline';
                                     }}
-                                />
+                                    onMouseLeave={(e) => {
+                                        e.target.style.color = '#0d9488';
+                                        e.target.style.textDecoration = 'none';
+                                    }}
+                                >
+                                    🌐 Visit Website
+                                </a>
+                                <a
+                                    href={bursary.applyLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={applyLinkStyle}
+                                    onClick={() => handleBursaryApply(bursary.name)}
+                                    onMouseEnter={(e) => {
+                                        e.target.style.color = '#0f766e';
+                                        e.target.style.textDecoration = 'underline';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.target.style.color = '#0d9488';
+                                        e.target.style.textDecoration = 'none';
+                                    }}
+                                >
+                                    📝 Apply Now →
+                                </a>
                             </div>
-                            <div>
-                                <h3 style={cardTitleStyle}>{bursary.name}</h3>
-                                <div style={providerStyle}>by {bursary.provider}</div>
-                            </div>
                         </div>
-
-                        <div style={badgeContainerStyle}>
-                            <span style={badgeStyle(bursary.category)}>{bursary.category}</span>
-                            <span style={levelBadgeStyle}>{bursary.level}</span>
-                            <span style={amountBadgeStyle}>{bursary.amount}</span>
-                            <span style={{ fontSize: '11px', padding: '2px 10px', borderRadius: '12px', fontWeight: '500', background: '#fee2e2', color: '#dc2626' }}>
-                                ⏰ {bursary.deadline}
-                            </span>
-                        </div>
-
-                        <div style={descriptionStyle}>
-                            {bursary.description}
-                        </div>
-
-                        <div style={footerStyle}>
-                            <a 
-                                href={bursary.website}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={linkStyle}
-                                onMouseEnter={(e) => {
-                                    e.target.style.color = '#0f766e';
-                                    e.target.style.textDecoration = 'underline';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.target.style.color = '#0d9488';
-                                    e.target.style.textDecoration = 'none';
-                                }}
-                            >
-                                🌐 Visit Website
-                            </a>
-                            <a 
-                                href={bursary.applyLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={applyLinkStyle}
-                                onMouseEnter={(e) => {
-                                    e.target.style.color = '#0f766e';
-                                    e.target.style.textDecoration = 'underline';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.target.style.color = '#0d9488';
-                                    e.target.style.textDecoration = 'none';
-                                }}
-                            >
-                                📝 Apply Now →
-                            </a>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
-            {filteredBursaries.length === 0 && (
-                <div style={noResultsStyle}>
-                    <div style={{ fontSize: '1.1rem', fontWeight: '600', marginBottom: '4px', color: '#1a202c' }}>
-                        💰 No bursaries found
-                    </div>
-                    <div style={{ fontSize: '0.85rem', color: '#64748b' }}>
-                        Try adjusting your filters
-                    </div>
+                    ))}
                 </div>
-            )}
-        </div>
+
+                {filteredBursaries.length === 0 && (
+                    <div style={noResultsStyle}>
+                        <div style={{ fontSize: '1.1rem', fontWeight: '600', marginBottom: '4px', color: '#1a202c' }}>
+                            💰 No bursaries found
+                        </div>
+                        <div style={{ fontSize: '0.85rem', color: '#64748b' }}>
+                            Try adjusting your filters
+                        </div>
+                    </div>
+                )}
+            </div>
         </>
     );
 }

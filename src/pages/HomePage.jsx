@@ -3,6 +3,7 @@ import HeroSection from "../components/HeroSection";
 import UniversityCard from "../components/UniversityCard";
 import { southAfricanUniversities } from "../script";
 import Seo from "../components/Seo";
+import { trackEvent } from "../components/Analytics";
 
 export default function HomePage() {
     const [loading, setLoading] = useState(true);
@@ -12,6 +13,8 @@ export default function HomePage() {
         const timer = setTimeout(() => {
             setUniversities(southAfricanUniversities);
             setLoading(false);
+            // Track page load
+            trackEvent('Home Page', 'Loaded', 'Page loaded successfully');
         }, 2000);
         return () => clearTimeout(timer);
     }, []);
@@ -34,22 +37,34 @@ export default function HomePage() {
         boxSizing: 'border-box'
     };
 
+    // Track university card interactions
+    const handleUniversityView = (universityName) => {
+        trackEvent('Home Page', 'University View', universityName);
+    };
+
+    const handleUniversityWebsite = (universityName) => {
+        trackEvent('Home Page', 'University Website Click', universityName);
+    };
+
     return (
         <>
-        <Seo 
+            <Seo
                 title="Home"
                 description="Your complete platform for university applications in South Africa. Get help with APS calculation, prospectuses, bursaries, and past exam papers."
                 keywords="university application, APS calculator, South African universities, study in SA"
             />
 
-        <div style={pageStyle}>
-            <main style={mainContentStyle}> <HeroSection />
-                <UniversityCard 
-                    universities={universities} 
-                    loading={loading} 
-                />
-            </main>
-        </div>
+            <div style={pageStyle}>
+                <main style={mainContentStyle}>
+                    <HeroSection />
+                    <UniversityCard
+                        universities={universities}
+                        loading={loading}
+                        onUniversityView={handleUniversityView}
+                        onUniversityWebsite={handleUniversityWebsite}
+                    />
+                </main>
+            </div>
         </>
     );
 }

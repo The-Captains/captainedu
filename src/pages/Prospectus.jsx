@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { southAfricanUniversities, provinces } from "../script";
 import Seo from "../components/Seo";
+import { trackEvent } from "../components/Analytics";
 
 function Prospectus() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -12,6 +13,28 @@ function Prospectus() {
         const matchesProvince = filterProvince === "All Provinces" || uni.province === filterProvince;
         return matchesSearch && matchesProvince;
     });
+
+    // Track functions
+    const handleSearch = (e) => {
+        const value = e.target.value;
+        setSearchTerm(value);
+        if (value.length > 2) {
+            trackEvent('Prospectus', 'Search', value);
+        }
+    };
+
+    const handleProvinceFilter = (province) => {
+        setFilterProvince(province);
+        trackEvent('Prospectus', 'Filter Province', province);
+    };
+
+    const handleProspectusView = (universityName) => {
+        trackEvent('Prospectus', 'View', universityName);
+    };
+
+    const handleUniversityHover = (universityName) => {
+        trackEvent('Prospectus', 'View', universityName);
+    };
 
     // Styles
     const containerStyle = {
@@ -146,94 +169,96 @@ function Prospectus() {
 
     return (
         <>
-        <Seo 
+            <Seo
                 title="University Prospectuses"
                 description="Browse and download official university prospectuses for 2025/2026 academic year from all South African universities."
                 keywords="university prospectus, university application guide, course information, South African universities"
             />
-            
-        <div style={containerStyle}>
-            <h1 style={titleStyle}>📚 University Prospectuses</h1>
-            <p style={subtitleStyle}>
-                Browse and access official university prospectuses for 2025/2026
-            </p>
 
-            <div style={filterContainerStyle}>
-                <input
-                    type="text"
-                    placeholder="🔍 Search university..."
-                    style={searchBoxStyle}
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    onFocus={(e) => e.target.style.borderColor = '#0d9488'}
-                    onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
-                />
-                <select
-                    style={selectStyle}
-                    value={filterProvince}
-                    onChange={(e) => setFilterProvince(e.target.value)}
-                >
-                    {provinces.map(province => (
-                        <option key={province} value={province}>{province}</option>
-                    ))}
-                </select>
-            </div>
+            <div style={containerStyle}>
+                <h1 style={titleStyle}>📚 University Prospectuses</h1>
+                <p style={subtitleStyle}>
+                    Browse and access official university prospectuses for 2025/2026
+                </p>
 
-            {/* Mobile View */}
-            <div style={gridStyle}>
-                {filteredUniversities.map((uni) => (
-                    <div 
-                        key={uni.id}
-                        style={cardStyle}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
-                            e.currentTarget.style.transform = 'translateY(-2px)';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.06)';
-                            e.currentTarget.style.transform = 'translateY(0)';
-                        }}
+                <div style={filterContainerStyle}>
+                    <input
+                        type="text"
+                        placeholder="🔍 Search university..."
+                        style={searchBoxStyle}
+                        value={searchTerm}
+                        onChange={handleSearch}
+                        onFocus={(e) => e.target.style.borderColor = '#0d9488'}
+                        onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
+                    />
+                    <select
+                        style={selectStyle}
+                        value={filterProvince}
+                        onChange={(e) => handleProvinceFilter(e.target.value)}
                     >
-                        <div style={logoContainerStyle}>
-                            <img 
-                                src={uni.logo || '/default-university-logo.png'}
-                                alt={uni.name}
-                                style={logoStyle}
-                                onError={(e) => {
-                                    e.target.src = '/default-university-logo.png';
-                                }}
-                            />
-                        </div>
-                        <div style={infoStyle}>
-                            <div style={universityNameStyle}>{uni.name}</div>
-                            <div style={locationStyle}>📍 {uni.city}, {uni.province}</div>
-                            <a 
-                                href={uni.prospectusUrl} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                style={linkStyle}
-                                onMouseEnter={(e) => {
-                                    e.target.style.color = '#0f766e';
-                                    e.target.style.textDecoration = 'underline';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.target.style.color = '#0d9488';
-                                    e.target.style.textDecoration = 'none';
-                                }}
-                            >
-                                📄 View Prospectus →
-                            </a>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
-            {filteredUniversities.length === 0 && (
-                <div style={emptyStyle}>
-                    🔍 No universities found matching "{searchTerm}"
+                        {provinces.map(province => (
+                            <option key={province} value={province}>{province}</option>
+                        ))}
+                    </select>
                 </div>
-            )}
-        </div>
+
+                {/* Mobile View */}
+                <div style={gridStyle}>
+                    {filteredUniversities.map((uni) => (
+                        <div
+                            key={uni.id}
+                            style={cardStyle}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                handleUniversityHover(uni.name);
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.06)';
+                                e.currentTarget.style.transform = 'translateY(0)';
+                            }}
+                        >
+                            <div style={logoContainerStyle}>
+                                <img
+                                    src={uni.logo || '/default-university-logo.png'}
+                                    alt={uni.name}
+                                    style={logoStyle}
+                                    onError={(e) => {
+                                        e.target.src = '/default-university-logo.png';
+                                    }}
+                                />
+                            </div>
+                            <div style={infoStyle}>
+                                <div style={universityNameStyle}>{uni.name}</div>
+                                <div style={locationStyle}>📍 {uni.city}, {uni.province}</div>
+                                <a
+                                    href={uni.prospectusUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={linkStyle}
+                                    onClick={() => handleProspectusView(uni.name)}
+                                    onMouseEnter={(e) => {
+                                        e.target.style.color = '#0f766e';
+                                        e.target.style.textDecoration = 'underline';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.target.style.color = '#0d9488';
+                                        e.target.style.textDecoration = 'none';
+                                    }}
+                                >
+                                    📄 View Prospectus →
+                                </a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {filteredUniversities.length === 0 && (
+                    <div style={emptyStyle}>
+                        🔍 No universities found matching "{searchTerm}"
+                    </div>
+                )}
+            </div>
         </>
     );
 }

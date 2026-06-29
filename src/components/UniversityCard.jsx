@@ -1,18 +1,37 @@
 // UniversityCard.jsx
 import { useState } from 'react';
+import { trackEvent } from '../components/Analytics';
 
 function UniversityCard({ universities, loading }) {
     const [expandedId, setExpandedId] = useState(null);
 
-    const toggleExpand = (id) => {
+    const toggleExpand = (id, universityName) => {
         setExpandedId(expandedId === id ? null : id);
+        // Track expand/collapse
+        if (expandedId !== id) {
+            trackEvent('University Card', 'Expand Description', universityName);
+        } else {
+            trackEvent('University Card', 'Collapse Description', universityName);
+        }
     };
 
     // Handle card click to open prospectus
-    const handleCardClick = (prospectusUrl) => {
+    const handleCardClick = (prospectusUrl, universityName) => {
         if (prospectusUrl) {
+            // Track prospectus view
+            trackEvent('University Card', 'View Prospectus', universityName);
             window.open(prospectusUrl, '_blank');
         }
+    };
+
+    // Handle website click
+    const handleWebsiteClick = (universityName) => {
+        trackEvent('University Card', 'Visit Website', universityName);
+    };
+
+    // Handle university view (when card is hovered)
+    const handleUniversityView = (universityName) => {
+        trackEvent('University Card', 'View', universityName);
     };
 
     // Simple styles - clean and minimal
@@ -145,23 +164,24 @@ function UniversityCard({ universities, loading }) {
                 const displayDescription = isExpanded ? description : description.slice(0, 150) + (needsExpand ? '...' : '');
 
                 return (
-                    <div 
+                    <div
                         key={university.id}
                         style={cardStyle}
                         onMouseEnter={(e) => {
                             e.currentTarget.style.boxShadow = '0 8px 30px rgba(0,0,0,0.12)';
                             e.currentTarget.style.transform = 'translateY(-2px)';
+                            handleUniversityView(university.name);
                         }}
                         onMouseLeave={(e) => {
                             e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
                             e.currentTarget.style.transform = 'translateY(0)';
                         }}
-                        onClick={() => handleCardClick(university.prospectusUrl)}
+                        onClick={() => handleCardClick(university.prospectusUrl, university.name)}
                     >
                         {/* Logo - Big and Visible */}
                         <div style={logoContainerStyle}>
-                            <img 
-                                src={university.logo || '/default-university-logo.png'} 
+                            <img
+                                src={university.logo || '/default-university-logo.png'}
                                 alt={university.name}
                                 style={logoStyle}
                                 onError={(e) => {
@@ -182,11 +202,11 @@ function UniversityCard({ universities, loading }) {
                         <div style={descriptionStyle}>
                             {displayDescription}
                             {needsExpand && (
-                                <button 
+                                <button
                                     style={seeMoreStyle}
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        toggleExpand(university.id);
+                                        toggleExpand(university.id, university.name);
                                     }}
                                 >
                                     {isExpanded ? ' Show less' : ' See more'}
@@ -196,12 +216,15 @@ function UniversityCard({ universities, loading }) {
 
                         {/* Footer with Website Button */}
                         <div style={footerStyle}>
-                            <a 
-                                href={university.website} 
-                                target="_blank" 
+                            <a
+                                href={university.website}
+                                target="_blank"
                                 rel="noopener noreferrer"
                                 style={websiteButtonStyle}
-                                onClick={(e) => e.stopPropagation()}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleWebsiteClick(university.name);
+                                }}
                                 onMouseEnter={(e) => {
                                     e.target.style.background = '#0d9488';
                                     e.target.style.color = 'white';

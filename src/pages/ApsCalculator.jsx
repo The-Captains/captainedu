@@ -1,6 +1,7 @@
 // pages/ApsCalculator.jsx
 import { useState } from "react";
 import Seo from "../components/Seo";
+import { trackEvent } from "../components/Analytics";
 
 function ApsCalculator() {
     const [subjects, setSubjects] = useState([
@@ -11,23 +12,23 @@ function ApsCalculator() {
         { id: 5, name: "", level: "" },
         { id: 6, name: "", level: "" }
     ]);
-    
+
     const [totalAPS, setTotalAPS] = useState(0);
 
     // Organized subjects according to South African Department of Education
     const subjectCategories = {
         "Official Languages (Home Language)": [
-            "English Home Language", "Afrikaans Home Language", "IsiZulu Home Language", 
-            "IsiXhosa Home Language", "IsiNdebele Home Language", "Sepedi Home Language", 
-            "Sesotho Home Language", "Setswana Home Language", "SiSwati Home Language", 
+            "English Home Language", "Afrikaans Home Language", "IsiZulu Home Language",
+            "IsiXhosa Home Language", "IsiNdebele Home Language", "Sepedi Home Language",
+            "Sesotho Home Language", "Setswana Home Language", "SiSwati Home Language",
             "Tshivenda Home Language", "Xitsonga Home Language"
         ],
         "Official Languages (First Additional Language)": [
-            "English First Additional Language", "Afrikaans First Additional Language", 
-            "IsiZulu First Additional Language", "IsiXhosa First Additional Language", 
-            "IsiNdebele First Additional Language", "Sepedi First Additional Language", 
-            "Sesotho First Additional Language", "Setswana First Additional Language", 
-            "SiSwati First Additional Language", "Tshivenda First Additional Language", 
+            "English First Additional Language", "Afrikaans First Additional Language",
+            "IsiZulu First Additional Language", "IsiXhosa First Additional Language",
+            "IsiNdebele First Additional Language", "Sepedi First Additional Language",
+            "Sesotho First Additional Language", "Setswana First Additional Language",
+            "SiSwati First Additional Language", "Tshivenda First Additional Language",
             "Xitsonga First Additional Language"
         ],
         "Official Languages (Second Additional Language)": [
@@ -37,17 +38,17 @@ function ApsCalculator() {
             "French", "German", "Spanish", "Mandarin", "Portuguese", "Latin"
         ],
         "Core Sciences": [
-            "Mathematics", "Mathematical Literacy", "Physical Sciences", "Life Sciences", 
-            "Agricultural Sciences", "Technical Sciences", "Computer Applications Technology", 
+            "Mathematics", "Mathematical Literacy", "Physical Sciences", "Life Sciences",
+            "Agricultural Sciences", "Technical Sciences", "Computer Applications Technology",
             "Information Technology"
         ],
         "Commerce & Humanities": [
-            "Accounting", "Business Studies", "Economics", "History", "Geography", 
+            "Accounting", "Business Studies", "Economics", "History", "Geography",
             "Religion Studies", "Tourism", "Consumer Studies", "Hospitality Studies"
         ],
         "Creative & Technical": [
-            "Visual Arts", "Design", "Dramatic Arts", "Dance Studies", "Music", 
-            "Civil Technology", "Electrical Technology", "Mechanical Technology", 
+            "Visual Arts", "Design", "Dramatic Arts", "Dance Studies", "Music",
+            "Civil Technology", "Electrical Technology", "Mechanical Technology",
             "Engineering Graphics and Design", "Agricultural Technology"
         ]
     };
@@ -93,7 +94,7 @@ function ApsCalculator() {
         return grouped;
     };
 
-    // Update subject or level
+    // Update subject or level - WITH EVENT TRACKING
     const updateSubject = (id, field, value) => {
         const updatedSubjects = subjects.map(subject => {
             if (subject.id === id) {
@@ -102,16 +103,41 @@ function ApsCalculator() {
             return subject;
         });
         setSubjects(updatedSubjects);
-        
+
         // Calculate total APS
         const total = updatedSubjects.reduce((sum, subject) => {
             const level = levels.find(l => l.value === subject.level);
             return sum + (level ? level.points : 0);
         }, 0);
         setTotalAPS(total);
+
+        // Track when a subject is selected
+        if (field === 'name' && value) {
+            trackEvent('APS Calculator', 'Subject Selected', value);
+        }
+
+        // Track when a level is selected
+        if (field === 'level' && value) {
+            const subjectName = updatedSubjects.find(s => s.id === id)?.name || 'Unknown';
+            const levelLabel = levels.find(l => l.value === value)?.label || value;
+            trackEvent('APS Calculator', 'Level Selected', `${subjectName} - ${levelLabel}`);
+        }
+
+        // Track total APS calculation when all subjects have levels
+        const selectedSubjects = updatedSubjects.filter(s => s.name && s.level);
+        if (selectedSubjects.length > 0) {
+            const allSelected = updatedSubjects.every(s => {
+                if (s.name) return s.level !== "";
+                return true;
+            });
+            // Track when all selected subjects have levels
+            if (allSelected && selectedSubjects.length >= 6) {
+                trackEvent('APS Calculator', 'APS Calculated', `Total: ${total}`);
+            }
+        }
     };
 
-    // Add new subject row
+    // Add new subject row - WITH EVENT TRACKING
     const addSubject = () => {
         if (subjects.length >= 12) {
             alert("Maximum 12 subjects allowed");
@@ -119,26 +145,32 @@ function ApsCalculator() {
         }
         const newId = Math.max(...subjects.map(s => s.id)) + 1;
         setSubjects([...subjects, { id: newId, name: "", level: "" }]);
+        trackEvent('APS Calculator', 'Add Subject', `Total subjects: ${subjects.length + 1}`);
     };
 
-    // Remove subject row
+    // Remove subject row - WITH EVENT TRACKING
     const removeSubject = (id) => {
         if (subjects.length <= 6) {
             alert("Minimum 6 subjects required for APS calculation");
             return;
         }
+        const removedSubject = subjects.find(s => s.id === id);
         const updatedSubjects = subjects.filter(subject => subject.id !== id);
         setSubjects(updatedSubjects);
-        
+
         // Recalculate total
         const total = updatedSubjects.reduce((sum, subject) => {
             const level = levels.find(l => l.value === subject.level);
             return sum + (level ? level.points : 0);
         }, 0);
         setTotalAPS(total);
+
+        if (removedSubject?.name) {
+            trackEvent('APS Calculator', 'Remove Subject', removedSubject.name);
+        }
     };
 
-    // Reset all
+    // Reset all - WITH EVENT TRACKING
     const resetCalculator = () => {
         setSubjects([
             { id: 1, name: "", level: "" },
@@ -149,6 +181,7 @@ function ApsCalculator() {
             { id: 6, name: "", level: "" }
         ]);
         setTotalAPS(0);
+        trackEvent('APS Calculator', 'Reset', 'Calculator reset');
     };
 
     // Get APS rating description
@@ -314,29 +347,29 @@ function ApsCalculator() {
 
     return (
         <>
-        <Seo 
+            <Seo
                 title="APS Calculator"
                 description="Calculate your Admission Point Score (APS) instantly. Find out if you qualify for your desired university course in South Africa."
                 keywords="APS calculator, admission point score, university admission, calculate APS, South African universities"
             />
 
-        <div style={containerStyle}>
-            <h1 style={titleStyle}>🎓 APS Calculator</h1>
-            <p style={subtitleStyle}>
-                Select your subjects and achievement levels to calculate your APS score
-            </p>
+            <div style={containerStyle}>
+                <h1 style={titleStyle}>🎓 APS Calculator</h1>
+                <p style={subtitleStyle}>
+                    Select your subjects and achievement levels to calculate your APS score
+                </p>
 
-            {/* Mobile: Horizontal scroll for table */}
-            <div style={{ overflowX: 'auto' }}>
-                <table style={tableStyle}>
-                    <thead>
+                {/* Mobile: Horizontal scroll for table */}
+                <div style={{ overflowX: 'auto' }}>
+                    <table style={tableStyle}>
+                        <thead>
                         <tr>
                             <th style={thStyle}>Subject</th>
                             <th style={thStyle}>Level</th>
                             <th style={{ ...thStyle, width: '50px' }}></th>
                         </tr>
-                    </thead>
-                    <tbody>
+                        </thead>
+                        <tbody>
                         {subjects.map((subject) => {
                             const groupedSubjects = getGroupedAvailableSubjects(subject.id, subject.name);
                             return (
@@ -393,51 +426,51 @@ function ApsCalculator() {
                                 </tr>
                             );
                         })}
-                    </tbody>
-                </table>
-            </div>
-
-            <div style={buttonContainerStyle}>
-                <button 
-                    style={addButtonStyle} 
-                    onClick={addSubject}
-                    onMouseEnter={(e) => {
-                        e.target.style.background = '#0d9488';
-                        e.target.style.color = 'white';
-                    }}
-                    onMouseLeave={(e) => {
-                        e.target.style.background = 'transparent';
-                        e.target.style.color = '#0d9488';
-                    }}
-                >
-                    + Add Subject
-                </button>
-                <button 
-                    style={resetButtonStyle} 
-                    onClick={resetCalculator}
-                    onMouseEnter={(e) => e.target.style.background = '#e2e8f0'}
-                    onMouseLeave={(e) => e.target.style.background = '#f1f5f9'}
-                >
-                    Reset All
-                </button>
-            </div>
-
-            <div style={resultContainerStyle}>
-                <div style={totalStyle}>{totalAPS}</div>
-                <div style={{ ...ratingStyle, color: rating.color }}>
-                    {rating.text}
+                        </tbody>
+                    </table>
                 </div>
-                <div style={messageStyle}>
-                    Based on {subjects.filter(s => s.level).length} subject(s) with levels selected
+
+                <div style={buttonContainerStyle}>
+                    <button
+                        style={addButtonStyle}
+                        onClick={addSubject}
+                        onMouseEnter={(e) => {
+                            e.target.style.background = '#0d9488';
+                            e.target.style.color = 'white';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.target.style.background = 'transparent';
+                            e.target.style.color = '#0d9488';
+                        }}
+                    >
+                        + Add Subject
+                    </button>
+                    <button
+                        style={resetButtonStyle}
+                        onClick={resetCalculator}
+                        onMouseEnter={(e) => e.target.style.background = '#e2e8f0'}
+                        onMouseLeave={(e) => e.target.style.background = '#f1f5f9'}
+                    >
+                        Reset All
+                    </button>
+                </div>
+
+                <div style={resultContainerStyle}>
+                    <div style={totalStyle}>{totalAPS}</div>
+                    <div style={{ ...ratingStyle, color: rating.color }}>
+                        {rating.text}
+                    </div>
+                    <div style={messageStyle}>
+                        Based on {subjects.filter(s => s.level).length} subject(s) with levels selected
+                    </div>
+                </div>
+
+                <div style={noteStyle}>
+                    📌 <strong>How APS works:</strong> Each subject is scored from 1-7 based on your percentage.
+                    Add up your best 6-7 subjects (excluding Life Orientation).
+                    Different universities have different minimum requirements.
                 </div>
             </div>
-
-            <div style={noteStyle}>
-                📌 <strong>How APS works:</strong> Each subject is scored from 1-7 based on your percentage. 
-                Add up your best 6-7 subjects (excluding Life Orientation). 
-                Different universities have different minimum requirements.
-            </div>
-        </div>
         </>
     );
 }

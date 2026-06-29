@@ -7,11 +7,15 @@ import Prospectus from "./pages/Prospectus";
 import Apply from "./pages/Apply";
 import ApsCalculator from "./pages/ApsCalculator";
 import { HelmetProvider } from "react-helmet-async";
+import Analytics, {initGA} from "./components/Analytics.jsx";
+
+initGA();
 
 function App() {
   return (
     <HelmetProvider>
     <BrowserRouter>
+      <Analytics /> {/* This tracks all page views automatically */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />

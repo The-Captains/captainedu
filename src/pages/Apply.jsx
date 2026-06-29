@@ -2,6 +2,7 @@
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
 import Seo from "../components/Seo";
+import { trackEvent } from "../components/Analytics";
 
 function Apply() {
     const [formData, setFormData] = useState({
@@ -190,6 +191,44 @@ function Apply() {
                 [name]: type === 'checkbox' ? checked : value
             });
         }
+
+        // Track institution type selection
+        if (name === 'institutionType') {
+            const type = value === 'university' ? 'University' : 'TVET College';
+            trackEvent('Application Form', 'Institution Type Selected', type);
+        }
+
+        // Track university selection
+        if (name === 'universityChoice' && value) {
+            trackEvent('Application Form', 'University Selected', value);
+        }
+
+        // Track TVET college selection
+        if (name === 'tvetCollege' && value) {
+            trackEvent('Application Form', 'TVET College Selected', value);
+        }
+
+        // Track course selections
+        if (name === 'firstChoice' && value) {
+            trackEvent('Application Form', 'First Choice Course', value);
+        }
+        if (name === 'secondChoice' && value) {
+            trackEvent('Application Form', 'Second Choice Course', value);
+        }
+        if (name === 'thirdChoice' && value) {
+            trackEvent('Application Form', 'Third Choice Course', value);
+        }
+
+        // Track file uploads
+        if (name === 'idCopy') {
+            trackEvent('Application Form', 'File Uploaded', 'ID Copy');
+        }
+        if (name === 'latestResults') {
+            trackEvent('Application Form', 'File Uploaded', 'Latest Results');
+        }
+        if (name === 'parentIdCopy') {
+            trackEvent('Application Form', 'File Uploaded', 'Parent ID Copy');
+        }
     };
 
     const handleFileUpload = (e) => {
@@ -258,6 +297,9 @@ function Apply() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Track form validation errors
+        let validationError = null;
+
         // Validation
         if (!formData.firstName || !formData.lastName || !formData.idNumber ||
             !formData.dateOfBirth || !formData.gender || !formData.nationality ||
@@ -268,42 +310,61 @@ function Apply() {
             !formData.parentFirstName || !formData.parentLastName ||
             !formData.parentEmail || !formData.parentPhone || !formData.parentRelationship ||
             !formData.agreeTerms) {
+            validationError = "Missing required fields";
+            trackEvent('Application Form', 'Validation Error', 'Missing required fields');
             alert("Please fill in all required fields and agree to the terms");
             return;
         }
 
         // Institution-specific validation
         if (formData.institutionType === 'university' && !formData.universityChoice) {
+            validationError = "No university selected";
+            trackEvent('Application Form', 'Validation Error', 'No university selected');
             alert("Please select a university");
             return;
         }
         if (formData.institutionType === 'tvet') {
             if (!formData.tvetCollege) {
+                validationError = "No TVET College selected";
+                trackEvent('Application Form', 'Validation Error', 'No TVET College selected');
                 alert("Please select a TVET College");
                 return;
             }
             if (formData.tvetCollege === 'Other' && !formData.tvetCollegeOther) {
+                validationError = "TVET College not specified";
+                trackEvent('Application Form', 'Validation Error', 'TVET College not specified');
                 alert("Please specify your TVET College");
                 return;
             }
             if (!formData.tvetCourse) {
+                validationError = "No course selected";
+                trackEvent('Application Form', 'Validation Error', 'No course selected');
                 alert("Please select a course");
                 return;
             }
             if (formData.tvetCourse === 'Other' && !formData.tvetCourseOther) {
+                validationError = "Course not specified";
+                trackEvent('Application Form', 'Validation Error', 'Course not specified');
                 alert("Please specify your course");
                 return;
             }
         }
 
         if (!formData.idCopy) {
+            validationError = "No ID copy uploaded";
+            trackEvent('Application Form', 'Validation Error', 'No ID copy uploaded');
             alert("Please upload a certified copy of your ID");
             return;
         }
         if (!formData.latestResults) {
+            validationError = "No results uploaded";
+            trackEvent('Application Form', 'Validation Error', 'No results uploaded');
             alert("Please upload your latest results");
             return;
         }
+
+        // Track that validation passed
+        trackEvent('Application Form', 'Validation Passed', 'All fields valid');
 
         setIsSubmitting(true);
 
@@ -390,6 +451,9 @@ function Apply() {
             });
 
             if (response.ok) {
+                // Track successful submission
+                trackEvent('Application Form', 'Submit', `Success - ${formData.institutionType} - ${formData.firstChoice}`);
+
                 await sendAutoReply(
                     formData.email,
                     formData.firstName,
@@ -405,10 +469,12 @@ function Apply() {
 
         } catch (error) {
             console.error('Submission error:', error);
+            trackEvent('Application Form', 'Submit Error', error.message || 'Unknown error');
             alert('There was an issue submitting your application. Please try again or email us directly at captainstechsolutions@gmail.com');
             setIsSubmitting(false);
         }
     };
+
 
     // Styles - Mobile-First Design
     const containerStyle = {

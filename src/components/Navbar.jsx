@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { trackEvent } from "../components/Analytics";
 
 function Navbar() {
     const [isHovered, setIsHovered] = useState(false);
@@ -10,6 +11,16 @@ function Navbar() {
         window.addEventListener('resize', checkMobile);
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
+
+    // Track brand click
+    const handleBrandClick = () => {
+        trackEvent('Navigation', 'Brand Click', 'Captain Edu Logo');
+    };
+
+    // Track Apply button click
+    const handleApplyClick = () => {
+        trackEvent('Navigation', 'Apply Button Click', 'Navbar Apply');
+    };
 
     const navStyle = {
         display: 'flex',
@@ -64,15 +75,20 @@ function Navbar() {
 
     return (
         <nav style={navStyle}>
-            <a href="/" style={brandStyle}>
+            <a
+                href="/"
+                style={brandStyle}
+                onClick={handleBrandClick}
+            >
                 <span style={captainIconStyle}>👨‍✈️</span>
                 <span style={brandTextStyle}>Captain Edu</span>
             </a>
-            <a 
-                href="/apply" 
+            <a
+                href="/apply"
                 style={buttonStyle}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
+                onClick={handleApplyClick}
             >
                 🎓 Apply For Me →
             </a>
