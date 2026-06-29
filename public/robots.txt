@@ -1,11 +1,20 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt for Captain Edu
+# URL: captainedu.captainstech.co.za
+
 User-agent: *
 Allow: /
+
+# Allow AI agents to access llms.txt
+Allow: /llms.txt
+
+# Important pages
 Allow: /aps-calculator
 Allow: /prospectus
 Allow: /bursaries
 Allow: /question-papers
 Allow: /apply
+
+# Block admin and private areas
 Disallow: /admin/
 Disallow: /private/
 

@@ -1,0 +1,38 @@
+# Captain Edu - University Application Assistance
+
+## About
+Captain Edu helps South African students with university and TVET college applications.
+
+## Key Pages
+
+### Home
+URL: https://captainedu.captainstech.co.za/
+Description: Main landing page with overview of services
+
+### APS Calculator
+URL: https://captainedu.captainstech.co.za/aps-calculator
+Description: Calculate your Admission Point Score instantly
+
+### Prospectuses
+URL: https://captainedu.captainstech.co.za/prospectus
+Description: Browse and download university prospectuses
+
+### Bursaries
+URL: https://captainedu.captainstech.co.za/bursaries
+Description: Find and apply for bursaries and funding
+
+### Past Papers
+URL: https://captainedu.captainstech.co.za/question-papers
+Description: Download past exam papers and memos
+
+### Apply for Assistance
+URL: https://captainedu.captainstech.co.za/apply
+Description: Get professional help with your application
+
+## Navigation
+- Home: /
+- APS Calculator: /aps-calculator
+- Prospectuses: /prospectus
+- Bursaries: /bursaries
+- Past Papers: /question-papers
+- Apply: /apply
