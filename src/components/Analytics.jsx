@@ -7,7 +7,8 @@ import ReactGA from 'react-ga4';
 export const initGA = () => {
     // Your Measurement ID from Google Analytics
     ReactGA.initialize(import.meta.env.VITE_GA_MEASUREMENT_ID);
-    console.log('📊 Google Analytics initialized');
+    console.log('📊 Google Analytics initialized with ID:', import.meta.env.VITE_GA_MEASUREMENT_ID);
+
 };
 
 // Track page views (automatically called on route change)
