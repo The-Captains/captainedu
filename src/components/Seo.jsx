@@ -45,6 +45,10 @@ function Seo({
             {/* Additional SEO Tags */}
             <link rel="canonical" href={fullUrl} />
             <meta name="theme-color" content="#0d9488" />
+
+            {/* Link to llms.txt for AI agents */}
+            <link rel="llms" href="https://captainedu.captainstech.co.za/llms.txt" />
+            <link rel="alternate" type="text/plain" href="https://captainedu.captainstech.co.za/llms.txt" title="llms.txt" />
         </Helmet>
     );
 }
