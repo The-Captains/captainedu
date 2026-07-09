@@ -74,6 +74,10 @@ export const allPapers = [
     { year: "2025", session: "November", subject: "Visual Arts", paperName: "Paper 2 (English)", paperFile: "Visual Arts P2 Nov 2025 Eng.pdf", memoFile: null, hasMemo: false },
     { year: "2025", session: "November", subject: "Visual Arts", paperName: "Paper 2 (Afrikaans)", paperFile: "Visual Arts P2 Nov 2025 Afr.pdf", memoFile: null, hasMemo: false },
 
+    // ========== VISUAL ARTS 2025 MAY-JUNE ==========
+    { year: "2025", session: "May-June", subject: "Visual Arts", paperName: "Visual Arts P1 May-June 2025 Eng", paperFile: "may-june/Visual Arts/Visual Arts P1 May-June 2025 Eng.pdf", memoFile: "may-june/Visual Arts/Visual Arts P1 May-June 2025 MG Eng.pdf", hasMemo: true },
+    { year: "2025", session: "May-June", subject: "Visual Arts", paperName: "Visual Arts P1 May-June 2025 Afr", paperFile: "may-june/Visual Arts/Visual Arts P1 May-June 2025 Afr.pdf", memoFile: "may-june/Visual Arts/Visual Arts P1 May-June 2025 MG Afr.pdf", hasMemo: true },
+
     // ========== RELIGION STUDIES 2025 ==========
     { year: "2025", session: "November", subject: "Religion Studies", paperName: "Paper 1 (English)", paperFile: "Religion Studies P1 Nov 2025 Eng.pdf", memoFile: "Religion Studies P1 Nov 2025 MG Eng.pdf", hasMemo: true },
     { year: "2025", session: "November", subject: "Religion Studies", paperName: "Paper 1 (Afrikaans)", paperFile: "Religion Studies P1 Nov 2025 Afr.pdf", memoFile: "Religion Studies P1 Nov 2025 MG Afr.pdf", hasMemo: true },
@@ -263,6 +267,48 @@ export const allPapers = [
 { year: "2025", session: "November", subject: "IsiNdebele", paperName: "SAL P1", paperFile: "IsiNdebele SAL P1 Nov 2025.pdf", memoFile: "IsiNdebele SAL P1 Nov 2025 MG.pdf", hasMemo: true },
 { year: "2025", session: "November", subject: "IsiNdebele", paperName: "SAL P2", paperFile: "IsiNdebele SAL P2 Nov 2025.pdf", memoFile: "IsiNdebele SAL P2 Nov 2025 MG.pdf", hasMemo: true },
 { year: "2025", session: "November", subject: "IsiNdebele", paperName: "SAL P3", paperFile: "IsiNdebele SAL P3 Nov 2025.pdf", memoFile: "IsiNdebele SAL P3 Nov 2025 MG.pdf", hasMemo: true },
+
+// ========== SEPEDI 2025 ==========
+    { year: "2025", session: "November", subject: "Sepedi", paperName: "Sepedi FAL P1 Nov 2025", paperFile: "2025/Sepedi/Sepedi FAL P1 Nov 2025.pdf", memoFile: "2025/Sepedi/Sepedi FAL P1 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sepedi", paperName: "Sepedi FAL P2 Nov 2025", paperFile: "2025/Sepedi/Sepedi FAL P2 Nov 2025.pdf", memoFile: "2025/Sepedi/Sepedi FAL P2 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sepedi", paperName: "Sepedi FAL P3 Nov 2025", paperFile: "2025/Sepedi/Sepedi FAL P3 Nov 2025.pdf", memoFile: "2025/Sepedi/Sepedi FAL P3 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sepedi", paperName: "Sepedi HL P1 Nov 2025", paperFile: "2025/Sepedi/Sepedi HL P1 Nov 2025.pdf", memoFile: "2025/Sepedi/Sepedi HL P1 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sepedi", paperName: "Sepedi HL P2 Nov 2025", paperFile: "2025/Sepedi/Sepedi HL P2 Nov 2025.pdf", memoFile: "2025/Sepedi/Sepedi HL P2 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sepedi", paperName: "Sepedi HL P3 Nov 2025", paperFile: "2025/Sepedi/Sepedi HL P3 Nov 2025.pdf", memoFile: "2025/Sesotho/Sesotho HL P3 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sepedi", paperName: "Sepedi SAL P1 Nov 2025", paperFile: "2025/Sepedi/Sepedi SAL P1 Nov 2025.pdf", memoFile: "2025/Sepedi/Sepedi SAL P1 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sepedi", paperName: "Sepedi SAL P2 Nov 2025 Gauteng", paperFile: "2025/Sepedi/Sepedi SAL P2 Nov 2025 Gauteng.pdf", memoFile: "2025/Sepedi/Sepedi SAL P2 Nov 2025 MG Gauteng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sepedi", paperName: "Sepedi SAL P2 Nov 2025 Limpopo", paperFile: "2025/Sepedi/Sepedi SAL P2 Nov 2025 Limpopo.pdf", memoFile: "2025/Sepedi/Sepedi SAL P2 Nov 2025 MG Limpopo.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sepedi", paperName: "Sepedi SAL P3 Nov 2025", paperFile: "2025/Sepedi/Sepedi SAL P3 Nov 2025", memoFile: "2025/Sepedi/Sepedi SAL P3 Nov 2025 MG.pdf", hasMemo: true },
+
+// ========== SESOTHO 2025 ==========
+    { year: "2025", session: "November", subject: "Sesotho", paperName: "Sesotho FAL P1 Nov 2025", paperFile: "2025/Sesotho/Sesotho FAL P1 Nov 2025.pdf", memoFile: "2025/Sesotho/Sesotho FAL P1 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sesotho", paperName: "Sesotho FAL P2 Nov 2025", paperFile: "2025/Sesotho/Sesotho FAL P2 Nov 2025.pdf", memoFile: "2025/Sesotho/Sesotho FAL P2 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sesotho", paperName: "Sesotho FAL P3 Nov 2025", paperFile: "2025/Sesotho/Sesotho FAL P3 Nov 2025.pdf", memoFile: "2025/Sesotho/Sesotho FAL P3 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sesotho", paperName: "Sesotho HL P1 Nov 2025", paperFile: "2025/Sesotho/Sesotho HL P1 Nov 2025.pdf", memoFile: "2025/Sesotho/Sesotho HL P1 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sesotho", paperName: "Sesotho HL P2 Nov 2025", paperFile: "2025/Sesotho/Sesotho HL P2 Nov 2025.pdf", memoFile: "2025/Sesotho/Sesotho HL P2 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sesotho", paperName: "Sesotho HL P3 Nov 2025", paperFile: "2025/Sesotho/Sesotho HL P3 Nov 2025.pdf", memoFile: "2025/Sesotho/Sesotho HL P3 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sesotho", paperName: "Sesotho SAL P1 Nov 2025", paperFile: "2025/Sesotho/Sesotho SAL P1 Nov 2025.pdf", memoFile: "2025/Sesotho/Sesotho SAL P1 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sesotho", paperName: "Sesotho SAL P2 Nov 2025", paperFile: "2025/Sesotho/Sesotho SAL P2 Nov 2025.pdf", memoFile: "2025/Sesotho/Sesotho SAL P2 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Sesotho", paperName: "Sesotho SAL P3 Nov 2025", paperFile: null, memoFile: "2025/Sesotho/Sesotho SAL P3 Nov 2025 MG.pdf", hasMemo: true },
+
+// ========== SETSWANA 2025 ==========
+    { year: "2025", session: "November", subject: "Setswana", paperName: "Setswana FAL P1 Nov 2025", paperFile: "2025/Setswana/Setswana FAL P1 Nov 2025.pdf", memoFile: "2025/Setswana/Setswana FAL P1 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Setswana", paperName: "Setswana FAL P2 Nov 2025", paperFile: "2025/Setswana/Setswana FAL P2 Nov 2025.pdf", memoFile: "2025/Setswana/Setswana FAL P2 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Setswana", paperName: "Setswana FAL P3 Nov 2025", paperFile: "2025/Setswana/Setswana FAL P3 Nov 2025.pdf", memoFile: "2025/Setswana/Setswana FAL P3 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Setswana", paperName: "Setswana HL P1 Nov 2025", paperFile: "2025/Setswana/Setswana HL P1 Nov 2025.pdf", memoFile: "2025/Setswana/Setswana HL P1 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Setswana", paperName: "Setswana HL P2 Nov 2025", paperFile: "2025/Setswana/Setswana HL P2 Nov 2025.pdf", memoFile: "2025/Setswana/Setswana HL P2 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Setswana", paperName: "Setswana HL P3 Nov 2025", paperFile: "2025/Setswana/Setswana HL P3 Nov 2025.pdf", memoFile: "2025/Setswana/Setswana HL P3 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Setswana", paperName: "Setswana SAL P1 Nov 2025", paperFile: "2025/Setswana/Setswana SAL P1 Nov 2025.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Setswana", paperName: "Setswana SAL P2 Nov 2025", paperFile: "2025/Setswana/Setswana SAL P2 Nov 2025.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Setswana", paperName: "Setswana SAL P3 Nov 2025", paperFile: "2025/Setswana/Setswana SAL P3 Nov 2025.pdf", memoFile: null, hasMemo: false },
+
+//========== SISWATI 2025 ==========
+    { year: "2025", session: "November", subject: "SiSwati", paperName: "Siswati FAL P1 Nov 2025", paperFile: "2025/Siswati/Siswati FAL P1 Nov 2025.pdf", memoFile: "2025/Siswati/Siswati FAL P1 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "SiSwati", paperName: "Siswati FAL P2 Nov 2025", paperFile: "2025/Siswati/Siswati FAL P2 Nov 2025.pdf", memoFile: "2025/Siswati/Siswati FAL P2 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "SiSwati", paperName: "Siswati FAL P3 Nov 2025", paperFile: "2025/Siswati/Siswati FAL P3 Nov 2025.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "SiSwati", paperName: "Siswati HL P1 Nov 2025", paperFile: "2025/Siswati/Siswati HL P1 Nov 2025.pdf", memoFile: "2025/Siswati/Siswati HL P1 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "SiSwati", paperName: "Siswati HL P2 Nov 2025", paperFile: "2025/Siswati/Siswati HL P2 Nov 2025.pdf", memoFile: "2025/Siswati/Siswati HL P2 Nov 2025 MG.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "SiSwati", paperName: "Siswati HL P3 Nov 2025", paperFile: "2025/Siswati/Siswati HL P3 Nov 2025.pdf", memoFile: "2025/Siswati/Siswati HL P3 Nov 2025 MG.pdf", hasMemo: true },
 ];
 
 // Language subjects list
