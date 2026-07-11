@@ -68,6 +68,10 @@ export const allPapers = [
     { year: "2025", session: "November", subject: "Tourism", paperName: "Paper (English)", paperFile: "Tourism Nov 2025 Eng.pdf", memoFile: "Tourism Nov 2025 MG Eng.pdf", hasMemo: true },
     { year: "2025", session: "November", subject: "Tourism", paperName: "Paper (Afrikaans)", paperFile: "Tourism Nov 2025 Afr.pdf", memoFile: "Tourism Nov 2025 MG Afr.pdf", hasMemo: true },
 
+// ========== TOURISM 2025 MAY-JUNE ==========
+    { year: "2025", session: "May-June", subject: "Tourism", paperName: "Tourism May-June 2025 Eng", paperFile: "2025/Tourism/Tourism May-June 2025 Eng.pdf", memoFile: "2025/Tourism/Tourism May-June 2025 MG Eng.pdf", hasMemo: true },
+   // { year: "2025", session: "May-June", subject: "Tourism", paperName: "Paper (Afrikaans)", paperFile: "Tourism Nov 2025 Afr.pdf", memoFile: "Tourism Nov 2025 MG Afr.pdf", hasMemo: true },
+
     // ========== VISUAL ARTS 2025 ==========
     { year: "2025", session: "November", subject: "Visual Arts", paperName: "Paper 1 (English)", paperFile: "Visual Arts P1 Nov 2025 Eng.pdf", memoFile: "Visual Arts P1 Nov 2025 MG Eng.pdf", hasMemo: true },
     { year: "2025", session: "November", subject: "Visual Arts", paperName: "Paper 1 (Afrikaans)", paperFile: "Visual Arts P1 Nov 2025 Afr.pdf", memoFile: "Visual Arts P1 Nov 2025 MG Afr.pdf", hasMemo: true },
