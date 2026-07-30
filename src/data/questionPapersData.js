@@ -15,7 +15,7 @@ export const cleanFileName = (filename) => {
 // ============================================
 export const allPapers = [
     // ========== ACCOUNTING 2025 ==========
-    { year: "2025", session: "November", subject: "Accounting", paperName: "Paper 1 (Afrikaans)", paperFile: "Accounting_P1_Nov_2025_Afr.pdf", memoFile: "Accounting_P1_Nov_2025_Memo_Afr.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Accounting", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/Accounting/Accounting_P1_Nov_2025_Afr.pdf", memoFile: "Accounting_P1_Nov_2025_Memo_Afr.pdf", hasMemo: true },
     { year: "2025", session: "November", subject: "Accounting", paperName: "Paper 1 (English)", paperFile: "Accounting_P1_Nov_2025_Eng.pdf", memoFile: "Accounting_P1_Nov_2025_Memo_Eng.pdf", hasMemo: true },
     { year: "2025", session: "November", subject: "Accounting", paperName: "Paper 2 (Afrikaans)", paperFile: "Accounting_P2_Nov_2025_Afr.pdf", memoFile: "Accounting_P2_Nov_2025_Memo_Afr.pdf", hasMemo: true },
     { year: "2025", session: "November", subject: "Accounting", paperName: "Paper 2 (English)", paperFile: "Accounting_P2_Nov_2025_Eng.pdf", memoFile: "Accounting_P2_Nov_2025_Memo_Eng.pdf", hasMemo: true },
