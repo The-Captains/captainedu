@@ -60,6 +60,92 @@ export const allPapers = [
     { year: "2025", session: "November", subject: "Civil Technology - Construction", paperName: "Paper (English)", paperFile: "2025/november/Civil Technology/Civil Technology Nov 2025 (Construction) Eng.pdf", memoFile: "2025/november/Civil Technology/Civil Technology Nov 2025 (Construction) Memo Eng.pdf", hasMemo: true },
     { year: "2025", session: "November", subject: "Civil Technology - Construction", paperName: "Paper (Afrikaans)", paperFile: "2025/november/Civil Technology/Civil Technology Nov 2025 (Construction) Afr.pdf", memoFile: "2025/november/Civil Technology/Civil Technology Nov 2025 (Construction) Memo Afr.pdf", hasMemo: true },
 
+// ===========COMPUTER APPLICATION TECHNOLOGY==============//
+    { year: "2025", session: "November", subject: "Computer Applications Technology", paperName: "Paper 1 (English)", paperFile: "2025/november/Computer Application Technology/ComputerApplicationsTechnologyP1Nov2025Eng.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Computer Applications Technology", paperName: "Paper 2 (English)", paperFile: "2025/november/Computer Application Technology/ComputerApplicationsTechnologyP2Nov2025Eng.pdf", memoFile: "2025/november/Computer Application Technology/ComputerApplicationsTechnologyP2Nov2025MemoEng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Computer Applications Technology", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/Computer Application Technology/ComputerApplicationsTechnologyP1Nov2025Afr.pdf", memoFile: "2025/november/Computer Application Technology/ComputerApplicationsTechnologyP1Nov2025MGAfr.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Computer Applications Technology", paperName: "Paper 2 (Afrikaans)", paperFile: "2025/november/Computer Application Technology/ComputerApplicationsTechnologyP2Nov2025Afr.pdf", memoFile: "2025/november/Computer Application Technology/ComputerApplicationsTechnologyP2Nov2025MemoAfr.pdf", hasMemo: true },
+
+// ========== CONSUMER STUDIES 2025 ==========
+    { year: "2025", session: "November", subject: "Consumer Studies", paperName: "Paper (English)", paperFile: "2025/november/Consumer Studies/ConsumerStudiesNov2025Eng.pdf", memoFile: "2025/november/Consumer Studies/ConsumerStudiesNov2025MGEng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Consumer Studies", paperName: "Paper (Afrikaans)", paperFile: "2025/november/Consumer Studies/Consumer2.StudiesNov2025MGAfr(1).pdf", memoFile: "2025/november/Consumer Studies/ConsumerStudiesNov2025MGAfr.pdf", hasMemo: true },
+
+// ========== DANCE STUDIES 2025 ==========
+    { year: "2025", session: "November", subject: "Dance Studies", paperName: "Paper (English)", paperFile: "2025/november/Dance Studies/DanceStudiesNov2025Eng.pdf", memoFile: "2025/november/Dance Studies/DanceStudiesNov2025MGEng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Dance Studies", paperName: "Paper (Afrikaans)", paperFile: "2025/november/Dance Studies/DanceStudiesNov2025Afr.pdf", memoFile: "2025/november/Dance Studies/DanceStudiesNov2025MGAfr.pdf", hasMemo: true },
+
+// ========== DESIGN 2025 ==========
+    { year: "2025", session: "November", subject: "Design", paperName: "Paper 1 (English)", paperFile: "2025/november/Design/DesignP1Nov2025Eng.pdf", memoFile: "2025/november/Design/DesignP1Nov2025MGEng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Design", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/Design/DesignP1Nov2025Afr.pdf", memoFile: "2025/november/Design/DesignP1Nov2025MGAfr.pdf", hasMemo: true },
+
+// ========== DRAMATIC ARTS 2025 ==========
+    { year: "2025", session: "November", subject: "Dramatic Arts", paperName: "Paper (English)", paperFile: null, memoFile: "2025/november/Dramatic Arts/DramaticArtsNov2025MGEng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Dramatic Arts", paperName: "Paper (Afrikaans)", paperFile: null, memoFile: "2025/november/Dramatic Arts/DramaticArtsNov2025MGAfr.pdf", hasMemo: true },
+
+    // ========== ECONOMICS 2025 ==========
+    { year: "2025", session: "November", subject: "Economics", paperName: "Paper 1 (English)", paperFile: "2025/november/Economics/EconomicsP1Nov2025Eng.pdf", memoFile: "2025/november/Economics/EconomicsP1Nov2025MGEng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Economics", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/Economics/EconomicsP1Nov2025Afr.pdf", memoFile: "2025/november/Economics/EconomicsP1Nov2025MGAfr.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Economics", paperName: "Paper 2 (English)", paperFile: "2025/november/Economics/EconomicsP2Nov2025Eng.pdf", memoFile: "2025/november/Economics/EconomicsP2Nov2025MGEng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Economics", paperName: "Paper 2 (Afrikaans)", paperFile: "2025/november/Economics/EconomicsP2Nov2025Afr.pdf", memoFile: "2025/november/Economics/EconomicsP2Nov2025MGAfr.pdf", hasMemo: true },
+
+// ========== ELECTRICAL TECHNOLOGY 2025 ==========
+// Digital Electronics
+    { year: "2025", session: "November", subject: "Electrical Technology - Digital Electronics", paperName: "Paper (English)", paperFile: "2025/november/Electrical Technology/ElectricalTechnologyNov2025(Digital)Eng.pdf", memoFile: "2025/november/Electrical Technology/ElectricalTechnologyNov2025(Digital)MGEng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Electrical Technology - Digital Electronics", paperName: "Paper (Afrikaans)", paperFile: "2025/november/Electrical Technology/ElectricalTechnologyNov2025(Digital)Afr.pdf", memoFile: "2025/november/Electrical Technology/ElectricalTechnologyNov2025(Digital)MGAfr.pdf", hasMemo: true },
+
+// Electronics
+    { year: "2025", session: "November", subject: "Electrical Technology - Electronics", paperName: "Paper (English)", paperFile: "2025/november/Electrical Technology/ElectricalTechnologyNov2025(Electronics)Eng.pdf", memoFile: "2025/november/Electrical Technology/ElectricalTechnologyNov2025(Electronics)MGEng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Electrical Technology - Electronics", paperName: "Paper (Afrikaans)", paperFile: "2025/november/Electrical Technology/ElectricalTechnologyNov2025(Electronics)Afr.pdf", memoFile: "2025/november/Electrical Technology/ElectricalTechnologyNov2025(Electronics)MGAfr.pdf", hasMemo: true },
+
+// Power Systems
+    { year: "2025", session: "November", subject: "Electrical Technology - Power Systems", paperName: "Paper (English)", paperFile: "2025/november/Electrical Technology/ElectricalTechnologyNov2025(Power Systems)Eng.pdf", memoFile: "2025/november/Electrical Technology/ElectricalTechnologyNov2025(Power Systems)MGEng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Electrical Technology - Power Systems", paperName: "Paper (Afrikaans)", paperFile: "2025/november/Electrical Technology/ElectricalTechnologyNov2025(Power Systems)Afr.pdf", memoFile: "2025/november/Electrical Technology/ElectricalTechnologyNov2025(Power Systems)MGAfr.pdf", hasMemo: true },
+
+// ========== ENGINEERING GRAPHICS AND DESIGN 2025 ==========
+    { year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 1 (English)", paperFile: "2025/november/Engineering Graphic and Design/EngineeringGraphics&DesignP1Nov2025Eng.pdf", memoFile: "2025/november/Engineering Graphic and Design/Engineering Graphics & Design P1 Nov 2025 MG Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/Engineering Graphic and Design/EngineeringGraphics&DesignP1Nov2025Afr.pdf", memoFile: "2025/november/Engineering Graphic and Design/EngineeringGraphics&DesignP1Nov2025MGAfr.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 1 Question 4 A3 (Afrikaans)", paperFile: "2025/november/Engineering Graphic and Design/Engineering Graphics & Design P1 Nov 2025 Q4  A3 MG Afr.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 1 Question 4 A3 (English)", paperFile: "2025/november/Engineering Graphic and Design/Engineering Graphics & Design P1 Nov 2025 Q4  A3 MG Eng.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 2 (English)", paperFile: "2025/november/Engineering Graphic and Design/Engineering Graphics & Design P2 Nov 2025 Eng.pdf", memoFile: "2025/november/Engineering Graphic and Design/Engineering Graphics & Design P2 Nov 2025 MG Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 2 (Afrikaans)", paperFile: "2025/november/Engineering Graphic and Design/Engineering Graphics & Design P2 Nov 2025 Afr.pdf", memoFile: "2025/november/Engineering Graphic and Design/Engineering Graphics & Design P2 Nov 2025 MG Afr.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 2 Question 4 A3 (Afrikaans)", paperFile: "2025/november/Engineering Graphic and Design/Engineering Graphics & Design P2 Nov 2025 Q4 A3 MG Afr.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 2 Question 4 A3 (English)", paperFile: "2025/november/Engineering Graphic and Design/Engineering Graphics & Design P2 Nov 2025 Q4 A3 MG Eng.pdf", memoFile: null, hasMemo: false },
+
+// ========== GEOGRAPHY 2025 ==========
+    { year: "2025", session: "November", subject: "Geography", paperName: "Paper 1 (English)", paperFile: "2025/november/Geography/GeographyP1Nov2025Eng.pdf", memoFile: "2025/november/Geography/GeographyP1Nov2025MGEng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Geography", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/Geography/GeographyP1Nov2025Afr.pdf", memoFile: "2025/november/Geography/GeographyP1Nov2025MGAfr.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Geography", paperName: "Paper 2 (English)", paperFile: "2025/november/Geography/GeographyP2Nov2025Eng.pdf", memoFile: "2025/november/Geography/GeographyP2Nov2025MGEng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Geography", paperName: "Paper 2 (Afrikaans)", paperFile: "2025/november/Geography/GeographyP2Nov2025Afr.pdf", memoFile: "2025/november/Geography/GeographyP2Nov2025MGAfr.pdf", hasMemo: true },
+
+// ========== HISTORY 2025 ==========
+    { year: "2025", session: "November", subject: "History", paperName: "Paper 1 (English)", paperFile: "2025/november/History/HistoryP1Nov2025Eng.pdf", memoFile: "2025/november/History/HistoryP1Nov2025MGEng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "History", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/History/HistoryP1Nov2025Afr.pdf", memoFile: "2025/november/History/HistoryP1Nov2025MGAfr.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "History", paperName: "Paper 1 Addendum (English)", paperFile: "2025/november/History/HistoryP1Nov2025AddendumEng.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "History", paperName: "Paper 1 Addendum (Afrikaans)", paperFile: "2025/november/History/HistoryP1Nov2025AddendumAfr.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "History", paperName: "Paper 2 (English)", paperFile: "2025/november/History/HistoryP2Nov2025Eng.pdf", memoFile: "2025/november/History/HistoryP2Nov2025MGEng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "History", paperName: "Paper 2 (Afrikaans)", paperFile: "2025/november/History/HistoryP2Nov2025Afr.pdf", memoFile: "2025/november/History/HistoryP2Nov2025MGAfr.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "History", paperName: "Paper 2 Addendum (English)", paperFile: "2025/november/History/HistoryP2Nov2025AddendumEng.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "History", paperName: "Paper 2 Addendum (Afrikaans)", paperFile: "2025/november/History/HistoryP2Nov2025AddendumAfr.pdf", memoFile: null, hasMemo: false },
+
+    // ========== HOSPITALITY STUDIES 2025 ==========
+    { year: "2025", session: "November", subject: "Hospitality Studies", paperName: "Paper (English)", paperFile: "2025/november/Hospitality Studies/Hospitality Studies Nov 2025 Eng.pdf", memoFile: "2025/november/Hospitality Studies/Hospitality Studies Nov 2025 MG Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Hospitality Studies", paperName: "Paper (Afrikaans)", paperFile: "2025/november/Hospitality Studies/Hospitality Studies Nov 2025 Afr.pdf", memoFile: "2025/november/Hospitality Studies/Hospitality Studies Nov 2025 MG Afr.pdf", hasMemo: true },
+
+    // ========== INFORMATION TECHNOLOGY 2025 ==========
+    { year: "2025", session: "November", subject: "Information Technology", paperName: "Paper 1 (English)", paperFile: "2025/november/Information Technology/Information Technology P1 Nov 2025 Eng.pdf", memoFile: "2025/november/Information Technology/Information Technology P1 Nov 2025 MG Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Information Technology", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/Information Technology/Information Technology P1 Nov 2025 Afr.pdf", memoFile: "2025/november/Information Technology/Information Technology P1 Nov 2025 MG Afr.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Information Technology", paperName: "Paper 2 (English)", paperFile: "2025/november/Information Technology/Information Technology P2 Nov 2025 Eng.pdf", memoFile: "2025/november/Information Technology/Information Technology P2 Nov 2025 MG Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Information Technology", paperName: "Paper 2 (Afrikaans)", paperFile: "2025/november/Information Technology/Information Technology P2 Nov 2025 Afr.pdf", memoFile: "2025/november/Information Technology/Information Technology P2 Nov 2025 MG Afr.pdf", hasMemo: true },
+
+    // ========== LIFE ORIENTATION 2025 ==========
+    { year: "2025", session: "September", subject: "Life Orientation", paperName: "Common Assessment Task (English)", paperFile: "2025/september/Life Orientation/Life Orientation September 2025 Eng.pdf", memoFile: "2025/september/Life Orientation/Life Orientation September 2025 MG Eng.pdf", hasMemo: true },
+    { year: "2025", session: "September", subject: "Life Orientation", paperName: "Common Assessment Task (Afrikaans)", paperFile: "2025/september/Life Orientation/Life Orientation September 2025 Afr.pdf", memoFile: "2025/september/Life Orientation/Life Orientation September 2025 MG Afr.pdf", hasMemo: true },
+
+
+
+
+
+
 
 
     // ========== MATHEMATICS 2025 ==========
@@ -146,80 +232,8 @@ export const allPapers = [
     { year: "2025", session: "November", subject: "Mechanical Technology - Welding and Metal Work", paperName: "Paper (Afrikaans)", paperFile: "Mechanical Technology Nov 2025 (Welding & Metal Work) Afr.pdf", memoFile: "Mechanical Technology Nov 2025 (Welding & Metal Work) MG Afr.pdf", hasMemo: true },
 
 
-    // ========== LIFE ORIENTATION 2025 ==========
-{ year: "2025", session: "September", subject: "Life Orientation", paperName: "Common Assessment Task (English)", paperFile: "Life Orientation September 2025 Eng.pdf", memoFile: "Life Orientation September 2025 MG Eng.pdf", hasMemo: true },
-{ year: "2025", session: "September", subject: "Life Orientation", paperName: "Common Assessment Task (Afrikaans)", paperFile: "Life Orientation September 2025 Afr.pdf", memoFile: "Life Orientation September 2025 MG Afr.pdf", hasMemo: true },
 
-// ========== INFORMATION TECHNOLOGY 2025 ==========
-{ year: "2025", session: "November", subject: "Information Technology", paperName: "Paper 1 (English)", paperFile: "Information Technology P1 Nov 2025 Eng.pdf", memoFile: "Information Technology P1 Nov 2025 MG Eng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Information Technology", paperName: "Paper 1 (Afrikaans)", paperFile: "Information Technology P1 Nov 2025 Afr.pdf", memoFile: "Information Technology P1 Nov 2025 MG Afr.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Information Technology", paperName: "Paper 2 (English)", paperFile: "Information Technology P2 Nov 2025 Eng.pdf", memoFile: "Information Technology P2 Nov 2025 MG Eng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Information Technology", paperName: "Paper 2 (Afrikaans)", paperFile: "Information Technology P2 Nov 2025 Afr.pdf", memoFile: "Information Technology P2 Nov 2025 MG Afr.pdf", hasMemo: true },
 
-// ========== HOSPITALITY STUDIES 2025 ==========
-{ year: "2025", session: "November", subject: "Hospitality Studies", paperName: "Paper (English)", paperFile: "Hospitality Studies Nov 2025 Eng.pdf", memoFile: "Hospitality Studies Nov 2025 MG Eng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Hospitality Studies", paperName: "Paper (Afrikaans)", paperFile: "Hospitality Studies Nov 2025 Afr.pdf", memoFile: "Hospitality Studies Nov 2025 MG Afr.pdf", hasMemo: true },
-
-// ========== GEOGRAPHY 2025 ==========
-{ year: "2025", session: "November", subject: "Geography", paperName: "Paper 1 (English)", paperFile: "GeographyP1Nov2025Eng.pdf", memoFile: "GeographyP1Nov2025MGEng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Geography", paperName: "Paper 1 (Afrikaans)", paperFile: "GeographyP1Nov2025Afr.pdf", memoFile: "GeographyP1Nov2025MGAfr.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Geography", paperName: "Paper 2 (English)", paperFile: "GeographyP2Nov2025Eng.pdf", memoFile: "GeographyP2Nov2025MGEng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Geography", paperName: "Paper 2 (Afrikaans)", paperFile: "GeographyP2Nov2025Afr.pdf", memoFile: "GeographyP2Nov2025MGAfr.pdf", hasMemo: true },
-
-// ========== HISTORY 2025 ==========
-{ year: "2025", session: "November", subject: "History", paperName: "Paper 1 (English)", paperFile: "HistoryP1Nov2025Eng.pdf", memoFile: "HistoryP1Nov2025MGEng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "History", paperName: "Paper 1 (Afrikaans)", paperFile: "HistoryP1Nov2025Afr.pdf", memoFile: "HistoryP1Nov2025MGAfr.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "History", paperName: "Paper 1 Addendum (English)", paperFile: "HistoryP1Nov2025AddendumEng.pdf", memoFile: null, hasMemo: false },
-{ year: "2025", session: "November", subject: "History", paperName: "Paper 1 Addendum (Afrikaans)", paperFile: "HistoryP1Nov2025AddendumAfr.pdf", memoFile: null, hasMemo: false },
-{ year: "2025", session: "November", subject: "History", paperName: "Paper 2 (English)", paperFile: "HistoryP2Nov2025Eng.pdf", memoFile: "HistoryP2Nov2025MGEng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "History", paperName: "Paper 2 (Afrikaans)", paperFile: "HistoryP2Nov2025Afr.pdf", memoFile: "HistoryP2Nov2025MGAfr.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "History", paperName: "Paper 2 Addendum (English)", paperFile: "HistoryP2Nov2025AddendumEng.pdf", memoFile: null, hasMemo: false },
-{ year: "2025", session: "November", subject: "History", paperName: "Paper 2 Addendum (Afrikaans)", paperFile: "HistoryP2Nov2025AddendumAfr.pdf", memoFile: null, hasMemo: false },
-
-// ========== ENGINEERING GRAPHICS AND DESIGN 2025 ==========
-{ year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 1 (English)", paperFile: "EngineeringGraphics&DesignP1Nov2025Eng.pdf", memoFile: "Engineering Graphics & Design P1 Nov 2025 MG Eng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 1 (Afrikaans)", paperFile: "EngineeringGraphics&DesignP1Nov2025Afr.pdf", memoFile: "EngineeringGraphics&DesignP1Nov2025MGAfr.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 1 Question 4 A3 (Afrikaans)", paperFile: "Engineering Graphics & Design P1 Nov 2025 Q4  A3 MG Afr.pdf", memoFile: null, hasMemo: false },
-{ year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 1 Question 4 A3 (English)", paperFile: "Engineering Graphics & Design P1 Nov 2025 Q4  A3 MG Eng.pdf", memoFile: null, hasMemo: false },
-{ year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 2 (English)", paperFile: "Engineering Graphics & Design P2 Nov 2025 Eng.pdf", memoFile: "Engineering Graphics & Design P2 Nov 2025 MG Eng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 2 (Afrikaans)", paperFile: "Engineering Graphics & Design P2 Nov 2025 Afr.pdf", memoFile: "Engineering Graphics & Design P2 Nov 2025 MG Afr.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 2 Question 4 A3 (Afrikaans)", paperFile: "Engineering Graphics & Design P2 Nov 2025 Q4 A3 MG Afr.pdf", memoFile: null, hasMemo: false },
-{ year: "2025", session: "November", subject: "Engineering Graphics and Design", paperName: "Paper 2 Question 4 A3 (English)", paperFile: "Engineering Graphics & Design P2 Nov 2025 Q4 A3 MG Eng.pdf", memoFile: null, hasMemo: false },
-
-// ========== ELECTRICAL TECHNOLOGY 2025 ==========
-// Digital Electronics
-{ year: "2025", session: "November", subject: "Electrical Technology - Digital Electronics", paperName: "Paper (English)", paperFile: "ElectricalTechnologyNov2025(Digital)Eng.pdf", memoFile: "ElectricalTechnologyNov2025(Digital)MGEng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Electrical Technology - Digital Electronics", paperName: "Paper (Afrikaans)", paperFile: "ElectricalTechnologyNov2025(Digital)Afr.pdf", memoFile: "ElectricalTechnologyNov2025(Digital)MGAfr.pdf", hasMemo: true },
-
-// Electronics
-{ year: "2025", session: "November", subject: "Electrical Technology - Electronics", paperName: "Paper (English)", paperFile: "ElectricalTechnologyNov2025(Electronics)Eng.pdf", memoFile: "ElectricalTechnologyNov2025(Electronics)MGEng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Electrical Technology - Electronics", paperName: "Paper (Afrikaans)", paperFile: "ElectricalTechnologyNov2025(Electronics)Afr.pdf", memoFile: "ElectricalTechnologyNov2025(Electronics)MGAfr.pdf", hasMemo: true },
-
-// Power Systems
-{ year: "2025", session: "November", subject: "Electrical Technology - Power Systems", paperName: "Paper (English)", paperFile: "ElectricalTechnologyNov2025(Power Systems)Eng.pdf", memoFile: "ElectricalTechnologyNov2025(Power Systems)MGEng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Electrical Technology - Power Systems", paperName: "Paper (Afrikaans)", paperFile: "ElectricalTechnologyNov2025(Power Systems)Afr.pdf", memoFile: "ElectricalTechnologyNov2025(Power Systems)MGAfr.pdf", hasMemo: true },
-
-// ========== ECONOMICS 2025 ==========
-{ year: "2025", session: "November", subject: "Economics", paperName: "Paper 1 (English)", paperFile: "EconomicsP1Nov2025Eng.pdf", memoFile: "EconomicsP1Nov2025MGEng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Economics", paperName: "Paper 1 (Afrikaans)", paperFile: "EconomicsP1Nov2025Afr.pdf", memoFile: "EconomicsP1Nov2025MGAfr.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Economics", paperName: "Paper 2 (English)", paperFile: "EconomicsP2Nov2025Eng.pdf", memoFile: "EconomicsP2Nov2025MGEng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Economics", paperName: "Paper 2 (Afrikaans)", paperFile: "EconomicsP2Nov2025Afr.pdf", memoFile: "EconomicsP2Nov2025MGAfr.pdf", hasMemo: true },
-
-// ========== CONSUMER STUDIES 2025 ==========
-{ year: "2025", session: "November", subject: "Consumer Studies", paperName: "Paper (English)", paperFile: "ConsumerStudiesNov2025Eng.pdf", memoFile: "ConsumerStudiesNov2025MGEng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Consumer Studies", paperName: "Paper (Afrikaans)", paperFile: "Consumer2.StudiesNov2025MGAfr(1).pdf", memoFile: "ConsumerStudiesNov2025MGAfr.pdf", hasMemo: true },
-
-// ========== DANCE STUDIES 2025 ==========
-{ year: "2025", session: "November", subject: "Dance Studies", paperName: "Paper (English)", paperFile: "DanceStudiesNov2025Eng.pdf", memoFile: "DanceStudiesNov2025MGEng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Dance Studies", paperName: "Paper (Afrikaans)", paperFile: "DanceStudiesNov2025Afr.pdf", memoFile: "DanceStudiesNov2025MGAfr.pdf", hasMemo: true },
-
-// ========== DESIGN 2025 ==========
-{ year: "2025", session: "November", subject: "Design", paperName: "Paper 1 (English)", paperFile: "DesignP1Nov2025Eng.pdf", memoFile: "DesignP1Nov2025MGEng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Design", paperName: "Paper 1 (Afrikaans)", paperFile: "DesignP1Nov2025Afr.pdf", memoFile: "DesignP1Nov2025MGAfr.pdf", hasMemo: true },
-
-// ========== DRAMATIC ARTS 2025 ==========
-{ year: "2025", session: "November", subject: "Dramatic Arts", paperName: "Paper (English)", paperFile: "DramaticArtsNov2025Eng.pdf", memoFile: "DramaticArtsNov2025MGEng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Dramatic Arts", paperName: "Paper (Afrikaans)", paperFile: "DramaticArtsNov2025Afr.pdf", memoFile: "DramaticArtsNov2025MGAfr.pdf", hasMemo: true },
 
 
 // ========== ENGLISH FIRST ADDITIONAL LANGUAGE (FAL) 2025 ==========
