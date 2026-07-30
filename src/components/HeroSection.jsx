@@ -180,7 +180,7 @@ function HeroSection() {
         },
         { 
             icon: "📝", 
-            title: "Past Papers", 
+            title: "Past Papers (Grade 12)",
             sub: "With memos",
             path: "/question-papers"
         }
