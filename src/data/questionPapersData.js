@@ -14,15 +14,53 @@ export const cleanFileName = (filename) => {
 // Just copy/paste original filenames - spaces are fine!
 // ============================================
 export const allPapers = [
+
+    //====================NON-LANGUAGES====================//
+
     // ========== ACCOUNTING 2025 ==========
-    { year: "2025", session: "November", subject: "Accounting", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/Accounting/Accounting_P1_Nov_2025_Afr.pdf", memoFile: "Accounting_P1_Nov_2025_Memo_Afr.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Accounting", paperName: "Paper 1 (English)", paperFile: "Accounting_P1_Nov_2025_Eng.pdf", memoFile: "Accounting_P1_Nov_2025_Memo_Eng.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Accounting", paperName: "Paper 2 (Afrikaans)", paperFile: "Accounting_P2_Nov_2025_Afr.pdf", memoFile: "Accounting_P2_Nov_2025_Memo_Afr.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Accounting", paperName: "Paper 2 (English)", paperFile: "Accounting_P2_Nov_2025_Eng.pdf", memoFile: "Accounting_P2_Nov_2025_Memo_Eng.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Accounting", paperName: "Answer Book (Afrikaans)", paperFile: "Accounting_P1_Nov_2025_Answer_Book_Afr.pdf", memoFile: null, hasMemo: false },
-    { year: "2025", session: "November", subject: "Accounting", paperName: "Answer Book (English)", paperFile: "Accounting_P1_Nov_2025_Answer_Book_Eng.pdf", memoFile: null, hasMemo: false },
-    { year: "2025", session: "November", subject: "Accounting", paperName: "Answer Book P2 (Afrikaans)", paperFile: "Accounting_P2_Nov_2025_Answer_Book_Afr.pdf", memoFile: null, hasMemo: false },
-    { year: "2025", session: "November", subject: "Accounting", paperName: "Answer Book P2 (English)", paperFile: "Accounting_P2_Nov_2025_Answer_Book_Eng.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Accounting", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/Accounting/Accounting_P1_Nov_2025_Afr.pdf", memoFile: "2025/november/Accounting/Accounting_P1_Nov_2025_MG_Afr.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Accounting", paperName: "Paper 1 (English)", paperFile: "2025/november/Accounting/Accounting_P1_Nov_2025_Eng.pdf", memoFile: "2025/november/Accounting/Accounting_P1_Nov_2025_MG_Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Accounting", paperName: "Paper 2 (Afrikaans)", paperFile: "2025/november/Accounting/Accounting_P2_Nov_2025_Afr.pdf", memoFile: "2025/november/Accounting/Accounting_P2_Nov_2025_MG_Afr.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Accounting", paperName: "Paper 2 (English)", paperFile: "2025/november/Accounting/Accounting_P2_Nov_2025_Eng.pdf", memoFile: "2025/november/Accounting/Accounting_P2_Nov_2025_MG_Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Accounting", paperName: "Answer Book (Afrikaans)", paperFile: "2025/november/Accounting/Accounting_P1_Nov_2025_Answer_Book_Afr.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Accounting", paperName: "Answer Book (English)", paperFile: "2025/november/Accounting/Accounting_P1_Nov_2025_Answer_Book_Eng.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Accounting", paperName: "Answer Book P2 (Afrikaans)", paperFile: "2025/november/Accounting/Accounting_P2_Nov_2025_Answer_Book_Afr.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Accounting", paperName: "Answer Book P2 (English)", paperFile: "2025/november/Accounting/Accounting_P2_Nov_2025_Answer_Book_Eng.pdf", memoFile: null, hasMemo: false },
+
+// ========== AGRICULTURAL TECHNOLOGY 2025 ==========
+    { year: "2025", session: "November", subject: "Agricultural Technology", paperName: "Paper (English)", paperFile: "2025/november/agricultural technology/Agricultural_Technology_Nov_2025_Eng.pdf", memoFile: "2025/november/agricultural technology/Agricultural_Technology_Nov_2025_Memo_Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Agricultural Technology", paperName: "Paper (Afrikaans)", paperFile: "2025/november/agricultural technology/Agricultural_Technology_Nov_2025_Afr.pdf", memoFile: "2025/november/agricultural technology/Agricultural_Technology_Nov_2025_Memo_Afr.pdf", hasMemo: true },
+
+// ========== AGRICULTURAL SCIENCES 2025 ==========
+    { year: "2025", session: "November", subject: "Agricultural Sciences", paperName: "Paper 1 (English)", paperFile: "2025/november/agricultural science/Agricultural_Sciences_P1_Nov_2025_Eng.pdf", memoFile: "2025/november/agricultural science/Agricultural_Sciences_P1_Nov_2025_Memo_Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Agricultural Sciences", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/agricultural science/Agricultural_Sciences_P1_Nov_2025_Afr.pdf", memoFile: "2025/november/agricultural science/Agricultural_Sciences_P1_Nov_2025_Memo_Afr.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Agricultural Sciences", paperName: "Paper 2 (English)", paperFile: "2025/november/agricultural science/Agricultural_Sciences_P2_Nov_2025_Eng.pdf", memoFile: "2025/november/agricultural science/Agricultural_Sciences_P2_Nov_2025_Memo_Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Agricultural Sciences", paperName: "Paper 2 (Afrikaans)", paperFile: "2025/november/agricultural science/Agricultural_Sciences_P2_Nov_2025_Afr.pdf", memoFile: "2025/november/agricultural science/Agricultural_Sciences_P2_Nov_2025_Memo_Afr.pdf", hasMemo: true },
+
+// ========== AGRICULTURAL MANAGEMENT PRACTICES 2025 ==========
+    { year: "2025", session: "November", subject: "Agricultural Management Practices", paperName: "Paper 1 (English)", paperFile: "2025/november/agricultural management practices/Agricultural_Management_Practices_Nov_2025_Eng.pdf", memoFile: "2025/november/agricultural management practices/Agricultural_Management_Practices_Nov_2025_Memo_Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Agricultural Management Practices", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/agricultural management practices/Agricultural_Management_Practices_Nov_2025_Afr.pdf", memoFile: "2025/november/agricultural management practices/Agricultural_Management_Practices_Nov_2025_Memo_Afr.pdf", hasMemo: true },
+
+// ========== BUSINESS STUDIES 2025 ==========
+    { year: "2025", session: "November", subject: "Business Studies", paperName: "Paper 1 (English)", paperFile: "2025/november/Business Studies/Business_Studies_P1_Nov_2025_Eng.pdf", memoFile: "2025/november/Business Studies/Business_Studies_P1_Nov_2025_Memo_Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Business Studies", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/Business Studies/Business_Studies_P1_Nov_2025_Afr.pdf", memoFile: "2025/november/Business Studies/Business_Studies_P1_Nov_2025_Memo_Afr.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Business Studies", paperName: "Paper 2 (English)", paperFile: "2025/november/Business Studies/Business_Studies_P2_Nov_2025_Eng.pdf", memoFile: "2025/november/Business Studies/Business_Studies_P2_Nov_2025_Memo_Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Business Studies", paperName: "Paper 2 (Afrikaans)", paperFile: "2025/november/Business Studies/Business_Studies_P2_Nov_2025_Afr.pdf", memoFile: "2025/november/Business Studies/Business_Studies_P2_Nov_2025_Memo_Afr.pdf", hasMemo: true },
+
+    // ========== CIVIL TECHNOLOGY 2025 ==========
+    // Civil Services
+    { year: "2025", session: "November", subject: "Civil Technology - Civil Services", paperName: "Paper (English)", paperFile: "2025/november/Civil Technology/Civil Technology Nov 2025 (Civil Services) Eng.pdf", memoFile: "2025/november/Civil Technology/Civil Technology Final Nov 2025 (Civil Services) Memo Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Civil Technology - Civil Services", paperName: "Paper (Afrikaans)", paperFile: "2025/november/Civil Technology/Civil Technology Nov 2025 (Civil Services) Afr.pdf", memoFile: "2025/november/Civil Technology/Civil Technology Final Nov 2025 (Civil Services) Memo Afr.pdf", hasMemo: true },
+
+    // Woodworking
+    { year: "2025", session: "November", subject: "Civil Technology - Woodworking", paperName: "Paper (English)", paperFile: "2025/november/Civil Technology/Civil Technology Nov 2025 (Woodworking) Eng.pdf", memoFile: "2025/november/Civil Technology/Civil Technology Nov 2025 Woodworking Memo Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Civil Technology - Woodworking", paperName: "Paper (Afrikaans)", paperFile: "2025/november/Civil Technology/Civil Technology Nov 2025 (Woodworking) Afr.pdf", memoFile: "2025/november/Civil Technology/Civil Technology Nov 2025 (Woodworking) Memo Afr.pdf", hasMemo: true },
+
+    // Construction
+    { year: "2025", session: "November", subject: "Civil Technology - Construction", paperName: "Paper (English)", paperFile: "2025/november/Civil Technology/Civil Technology Nov 2025 (Construction) Eng.pdf", memoFile: "2025/november/Civil Technology/Civil Technology Nov 2025 (Construction) Memo Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Civil Technology - Construction", paperName: "Paper (Afrikaans)", paperFile: "2025/november/Civil Technology/Civil Technology Nov 2025 (Construction) Afr.pdf", memoFile: "2025/november/Civil Technology/Civil Technology Nov 2025 (Construction) Memo Afr.pdf", hasMemo: true },
+
+
 
     // ========== MATHEMATICS 2025 ==========
     { year: "2025", session: "November", subject: "Mathematics", paperName: "Paper 1", paperFile: "Mathematics P1 Nov 2025 Eng.pdf", memoFile: "Mathematics P1 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
@@ -107,18 +145,6 @@ export const allPapers = [
     { year: "2025", session: "November", subject: "Mechanical Technology - Welding and Metal Work", paperName: "Paper (English)", paperFile: "Mechanical Technology Nov 2025 (Welding & Metal Work) Eng.pdf", memoFile: "Mechanical Technology Nov 2025 (Welding & Metal Work) MG Eng.pdf", hasMemo: true },
     { year: "2025", session: "November", subject: "Mechanical Technology - Welding and Metal Work", paperName: "Paper (Afrikaans)", paperFile: "Mechanical Technology Nov 2025 (Welding & Metal Work) Afr.pdf", memoFile: "Mechanical Technology Nov 2025 (Welding & Metal Work) MG Afr.pdf", hasMemo: true },
 
-    // ========== CIVIL TECHNOLOGY 2025 ==========
-    // Civil Services
-    { year: "2025", session: "November", subject: "Civil Technology - Civil Services", paperName: "Paper (English)", paperFile: "Civil Technology Nov 2025 (Civil Services) Eng.pdf", memoFile: "Civil Technology Final Nov 2025 (Civil Services) MG Eng.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Civil Technology - Civil Services", paperName: "Paper (Afrikaans)", paperFile: "Civil Technology Nov 2025 (Civil Services) Afr.pdf", memoFile: "Civil Technology Final Nov 2025 (Civil Services) MG Afr.pdf", hasMemo: true },
-    
-    // Woodworking
-    { year: "2025", session: "November", subject: "Civil Technology - Woodworking", paperName: "Paper (English)", paperFile: "Civil Technology Nov 2025 (Woodworking) Eng.pdf", memoFile: "Civil Technology Nov 2025 Woodworking Memo Eng.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Civil Technology - Woodworking", paperName: "Paper (Afrikaans)", paperFile: "Civil Technology Nov 2025 (Woodworking) Afr.pdf", memoFile: "Civil Technology Nov 2025 Woodworking Memo Afr.pdf", hasMemo: true },
-    
-    // Construction
-    { year: "2025", session: "November", subject: "Civil Technology - Construction", paperName: "Paper (English)", paperFile: "Civil Technology Nov 2025 (Construction) Eng.pdf", memoFile: "Civil Technology Nov 2025 (Construction) MG Eng.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Civil Technology - Construction", paperName: "Paper (Afrikaans)", paperFile: "Civil Technology Nov 2025 (Construction) Afr.pdf", memoFile: "Civil Technology Nov 2025 (Construction) MG Afr.pdf", hasMemo: true },
 
     // ========== LIFE ORIENTATION 2025 ==========
 { year: "2025", session: "September", subject: "Life Orientation", paperName: "Common Assessment Task (English)", paperFile: "Life Orientation September 2025 Eng.pdf", memoFile: "Life Orientation September 2025 MG Eng.pdf", hasMemo: true },
@@ -195,38 +221,6 @@ export const allPapers = [
 { year: "2025", session: "November", subject: "Dramatic Arts", paperName: "Paper (English)", paperFile: "DramaticArtsNov2025Eng.pdf", memoFile: "DramaticArtsNov2025MGEng.pdf", hasMemo: true },
 { year: "2025", session: "November", subject: "Dramatic Arts", paperName: "Paper (Afrikaans)", paperFile: "DramaticArtsNov2025Afr.pdf", memoFile: "DramaticArtsNov2025MGAfr.pdf", hasMemo: true },
 
-// ========== CIVIL TECHNOLOGY 2025 ==========
-// Civil Services
-{ year: "2025", session: "November", subject: "Civil Technology - Civil Services", paperName: "Paper (English)", paperFile: "Civil_Technology_Nov_2025_(Civil Services)_Eng.pdf", memoFile: "Civil_Technology_Final_Nov_2025_(Civil Services)_Memo_Eng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Civil Technology - Civil Services", paperName: "Paper (Afrikaans)", paperFile: "Civil_Technology_Nov_2025_(Civil Services)_Afr.pdf", memoFile: "Civil_Technology_Final_Nov_2025_(Civil Services)_Memo_Afr.pdf", hasMemo: true },
-
-// Construction
-{ year: "2025", session: "November", subject: "Civil Technology - Construction", paperName: "Paper (English)", paperFile: "Civil_Technology_Nov_2025_(Construction)_Eng.pdf", memoFile: "Civil_Technology_Nov_2025_(Construction)_Memo_Eng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Civil Technology - Construction", paperName: "Paper (Afrikaans)", paperFile: "Civil_Technology_Nov_2025_(Construction)_Afr.pdf", memoFile: "Civil_Technology_Nov_2025_(Construction)_Memo_Afr.pdf", hasMemo: true },
-
-// Woodworking
-{ year: "2025", session: "November", subject: "Civil Technology - Woodworking", paperName: "Paper (English)", paperFile: "Civil_Technology_Nov_2025_(Woodworking)_Eng.pdf", memoFile: "Civil_Technology_Nov_2025_Woodworking_Memo_Eng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Civil Technology - Woodworking", paperName: "Paper (Afrikaans)", paperFile: "Civil_Technology_Nov_2025_(Woodworking)_Afr.pdf", memoFile: "Civil_Technology_Nov_2025_(Woodworking)_Memo_Afr.pdf", hasMemo: true },
-
-// ========== AGRICULTURAL TECHNOLOGY 2025 ==========
-{ year: "2025", session: "November", subject: "Agricultural Technology", paperName: "Paper (English)", paperFile: "Agricultural_Technology_Nov_2025_Eng.pdf", memoFile: "Agricultural_Technology_Nov_2025_Memo_Eng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Agricultural Technology", paperName: "Paper (Afrikaans)", paperFile: "Agricultural_Technology_Nov_2025_Afr.pdf", memoFile: "Agricultural_Technology_Nov_2025_Memo_Afr.pdf", hasMemo: true },
-
-// ========== AGRICULTURAL SCIENCES 2025 ==========
-{ year: "2025", session: "November", subject: "Agricultural Sciences", paperName: "Paper 1 (English)", paperFile: "Agricultural_Sciences_P1_Nov_2025_Eng.pdf", memoFile: "Agricultural_Sciences_P1_Nov_2025_Memo_Eng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Agricultural Sciences", paperName: "Paper 1 (Afrikaans)", paperFile: "Agricultural_Sciences_P1_Nov_2025_Afr.pdf", memoFile: "Agricultural_Sciences_P1_Nov_2025_Memo_Afr.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Agricultural Sciences", paperName: "Paper 2 (English)", paperFile: "Agricultural_Sciences_P2_Nov_2025_Eng.pdf", memoFile: "Agricultural_Sciences_P2_Nov_2025_Memo_Eng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Agricultural Sciences", paperName: "Paper 2 (Afrikaans)", paperFile: "Agricultural_Sciences_P2_Nov_2025_Afr.pdf", memoFile: "Agricultural_Sciences_P2_Nov_2025_Memo_Afr.pdf", hasMemo: true },
-
-// ========== AGRICULTURAL MANAGEMENT PRACTICES 2025 ==========
-{ year: "2025", session: "November", subject: "Agricultural Management Practices", paperName: "Paper 1 (English)", paperFile: "Agricultural_Management_Practices_Nov_2025_Eng.pdf", memoFile: "Agricultural_Management_Practices_Nov_2025_Memo_Eng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Agricultural Management Practices", paperName: "Paper 1 (Afrikaans)", paperFile: "Agricultural_Management_Practices_Nov_2025_Afr.pdf", memoFile: "Agricultural_Management_Practices_Nov_2025_Memo_Afr.pdf", hasMemo: true },
-
-// ========== BUSINESS STUDIES 2025 ==========
-{ year: "2025", session: "November", subject: "Business Studies", paperName: "Paper 1 (English)", paperFile: "Business_Studies_P1_Nov_2025_Eng.pdf", memoFile: "Business_Studies_P1_Nov_2025_Memo_Eng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Business Studies", paperName: "Paper 1 (Afrikaans)", paperFile: "Business_Studies_P1_Nov_2025_Afr.pdf", memoFile: "Business_Studies_P1_Nov_2025_Memo_Afr.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Business Studies", paperName: "Paper 2 (English)", paperFile: "Business_Studies_P2_Nov_2025_Eng.pdf", memoFile: "Business_Studies_P2_Nov_2025_Memo_Eng.pdf", hasMemo: true },
-{ year: "2025", session: "November", subject: "Business Studies", paperName: "Paper 2 (Afrikaans)", paperFile: "Business_Studies_P2_Nov_2025_Afr.pdf", memoFile: "Business_Studies_P2_Nov_2025_Memo_Afr.pdf", hasMemo: true },
 
 // ========== ENGLISH FIRST ADDITIONAL LANGUAGE (FAL) 2025 ==========
 { year: "2025", session: "May/June", subject: "English First Additional Language", paperName: "Paper 2", paperFile: "English FAL P2 May-June 2025.pdf", memoFile: null, hasMemo: false },
