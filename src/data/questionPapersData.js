@@ -141,28 +141,35 @@ export const allPapers = [
     { year: "2025", session: "September", subject: "Life Orientation", paperName: "Common Assessment Task (English)", paperFile: "2025/september/Life Orientation/Life Orientation September 2025 Eng.pdf", memoFile: "2025/september/Life Orientation/Life Orientation September 2025 MG Eng.pdf", hasMemo: true },
     { year: "2025", session: "September", subject: "Life Orientation", paperName: "Common Assessment Task (Afrikaans)", paperFile: "2025/september/Life Orientation/Life Orientation September 2025 Afr.pdf", memoFile: "2025/september/Life Orientation/Life Orientation September 2025 MG Afr.pdf", hasMemo: true },
 
+// ========== LIFE SCIENCES 2025 ==========
+    { year: "2025", session: "November", subject: "Life Sciences", paperName: "Paper 1 (English)", paperFile: "2025/november/Life Sciences/Life Sciences P1 Nov 2025 Eng.pdf", memoFile: "2025/november/Life Sciences/Life Sciences P1 Nov 2025 MG Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Life Sciences", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/Life Sciences/Life Sciences P1 Nov 2025 Afr.pdf", memoFile: "2025/november/Life Sciences/Life Sciences P1 Nov 2025 MG Afr.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Life Sciences", paperName: "Paper 2 (English)", paperFile: "2025/november/Life Sciences/Life Sciences P2 Nov 2025 Eng.pdf", memoFile: "2025/november/Life Sciences/Life Sciences P2 Nov 2025 MG Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Life Sciences", paperName: "Paper 2 (Afrikaans)", paperFile: "2025/november/Life Sciences/Life Sciences P2 Nov 2025 Afr.pdf", memoFile: "2025/november/Life Sciences/Life Sciences P2 Nov 2025 MG Afr.pdf", hasMemo: true },
 
+// ========== MARINE SCIENCES 2025 ==========
+    { year: "2025", session: "November", subject: "Marine Sciences", paperName: "Paper 1 (English)", paperFile: "2025/november/Marine Sciences/Marine Sciences P1 Nov 2025 Eng.pdf", memoFile: "2025/november/Marine Sciences/Marine Sciences P1 Nov 2025 MG Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Marine Sciences", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/Marine Sciences/Marine Sciences P1 Nov 2025 Afr.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Marine Sciences", paperName: "Paper 2 (English)", paperFile: "2025/november/Marine Sciences/Marine Sciences P2 Nov 2025 Eng.pdf", memoFile: "2025/november/Marine Sciences/Marine Sciences P2 Nov 2025 MG Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Marine Sciences", paperName: "Paper 2 (Afrikaans)", paperFile: "2025/november/Marine Sciences/Marine Sciences P2 Nov 2025 Afr.pdf", memoFile: null, hasMemo: false },
 
-
-
-
-
+// ========== MATHEMATICAL LITERACY 2025 ==========
+    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Paper 1 (English)", paperFile: "2025/november/Mathematical Literacy/Mathematical Literacy P1 Nov 2025 Eng.pdf", memoFile: "2025/november/Mathematical Literacy/Mathematical Literacy P1 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/Mathematical Literacy/Mathematical Literacy P1 Nov 2025 Afr.pdf", memoFile: "2025/november/Mathematical Literacy/Mathematical Literacy P1 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Answer Book P1 (English)", paperFile: "2025/november/Mathematical Literacy/Mathematical Literacy P1 Nov 2025 Answer Book Eng.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Answer Book P1 (Afrikaans)", paperFile: "2025/november/Mathematical Literacy/Mathematical Literacy P1 Nov 2025 Answer Book Afr.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Paper 2 (English)", paperFile: "2025/november/Mathematical Literacy/Mathematical Literacy P2 Nov 2025 Eng.pdf", memoFile: "2025/november/Mathematical Literacy/Mathematical Literacy P2 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Paper 2 (Afrikaans)", paperFile: "2025/november/Mathematical Literacy/Mathematical Literacy P2 Nov 2025 Afr.pdf", memoFile: "2025/november/Mathematical Literacy/Mathematical Literacy P2 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Answer Book P2 (English)", paperFile: "2025/november/Mathematical Literacy/Mathematical Literacy P2 Nov 2025 Answer Book Eng.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Answer Book P2 (Afrikaans)", paperFile: "2025/november/Mathematical Literacy/Mathematical Literacy P2 Nov 2025 Answer Book Afr.pdf", memoFile: null, hasMemo: false },
 
     // ========== MATHEMATICS 2025 ==========
-    { year: "2025", session: "November", subject: "Mathematics", paperName: "Paper 1", paperFile: "Mathematics P1 Nov 2025 Eng.pdf", memoFile: "Mathematics P1 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Mathematics", paperName: "Paper 2", paperFile: "Mathematics P2 Nov 2025 Eng.pdf", memoFile: "Mathematics P2 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Mathematics", paperName: "Answer Book P1", paperFile: "Mathematics P1 Nov 2025 Answer Book Eng & Afr.pdf", memoFile: null, hasMemo: false },
-    { year: "2025", session: "November", subject: "Mathematics", paperName: "Answer Book P2", paperFile: "Mathematics P2 Nov 2025 Answer Book Afr & Eng.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Mathematics", paperName: "Paper 1", paperFile: "2025/november/Mathematics/Mathematics P1 Nov 2025 Eng.pdf", memoFile: "2025/november/Mathematics/Mathematics P1 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Mathematics", paperName: "Paper 2", paperFile: "2025/november/Mathematics/Mathematics P2 Nov 2025 Eng.pdf", memoFile: "2025/november/Mathematics/Mathematics P2 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
+    { year: "2025", session: "November", subject: "Mathematics", paperName: "Paper 1 (Afrikaans)", paperFile: "2025/november/Mathematics/Mathematics P1 Nov 2025 Afr.pdf", memoFile: null, hasMemo: false },
+    { year: "2025", session: "November", subject: "Mathematics", paperName: "Answer Book P2", paperFile: "2025/november/Mathematics/Mathematics P2 Nov 2025 Answer Book Afr & Eng.pdf", memoFile: null, hasMemo: false },
 
-    // ========== MATHEMATICAL LITERACY 2025 ==========
-    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Paper 1 (English)", paperFile: "Mathematical Literacy P1 Nov 2025 Eng.pdf", memoFile: "Mathematical Literacy P1 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Paper 1 (Afrikaans)", paperFile: "Mathematical Literacy P1 Nov 2025 Afr.pdf", memoFile: "Mathematical Literacy P1 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Answer Book P1 (English)", paperFile: "Mathematical Literacy P1 Nov 2025 Answer Book Eng.pdf", memoFile: null, hasMemo: false },
-    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Answer Book P1 (Afrikaans)", paperFile: "Mathematical Literacy P1 Nov 2025 Answer Book Afr.pdf", memoFile: null, hasMemo: false },
-    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Paper 2 (English)", paperFile: "Mathematical Literacy P2 Nov 2025 Eng.pdf", memoFile: "Mathematical Literacy P2 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Paper 2 (Afrikaans)", paperFile: "Mathematical Literacy P2 Nov 2025 Afr.pdf", memoFile: "Mathematical Literacy P2 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Answer Book P2 (English)", paperFile: "Mathematical Literacy P2 Nov 2025 Answer Book Eng.pdf", memoFile: null, hasMemo: false },
-    { year: "2025", session: "November", subject: "Mathematical Literacy", paperName: "Answer Book P2 (Afrikaans)", paperFile: "Mathematical Literacy P2 Nov 2025 Answer Book Afr.pdf", memoFile: null, hasMemo: false },
+
 
     // ========== TECHNICAL MATHEMATICS 2025 ==========
     { year: "2025", session: "November", subject: "Technical Mathematics", paperName: "Paper 1 (English)", paperFile: "Technical Mathematics P1 Nov 2025 Eng.pdf", memoFile: "Technical Mathematics P1 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
@@ -184,9 +191,6 @@ export const allPapers = [
     { year: "2025", session: "November", subject: "Technical Sciences", paperName: "Paper 2 (English)", paperFile: "Technical Sciences P2 Nov 2025 Eng.pdf", memoFile: "Technical Sciences P2 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
     { year: "2025", session: "November", subject: "Technical Sciences", paperName: "Paper 2 (Afrikaans)", paperFile: "Technical Sciences P2 Nov 2025 Afr.pdf", memoFile: "Technical Sciences P2 Nov 2025 MG Afr & Eng.pdf", hasMemo: true },
 
-    // ========== LIFE SCIENCES 2025 ==========
-    { year: "2025", session: "November", subject: "Life Sciences", paperName: "Paper 1", paperFile: "Life_Sciences_P1_Nov_2025.pdf", memoFile: "Life_Sciences_P1_Nov_2025_Memo.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Life Sciences", paperName: "Paper 2", paperFile: "Life_Sciences_P2_Nov_2025.pdf", memoFile: "Life_Sciences_P2_Nov_2025_Memo.pdf", hasMemo: true },
 
     // ========== TOURISM 2025 ==========
     { year: "2025", session: "November", subject: "Tourism", paperName: "Paper (English)", paperFile: "Tourism Nov 2025 Eng.pdf", memoFile: "Tourism Nov 2025 MG Eng.pdf", hasMemo: true },
@@ -212,11 +216,6 @@ export const allPapers = [
     { year: "2025", session: "November", subject: "Religion Studies", paperName: "Paper 2 (English)", paperFile: "Religion Studies P2 Nov 2025 Eng.pdf", memoFile: "Religion Studies P2 Nov 2025 MG Eng.pdf", hasMemo: true },
     { year: "2025", session: "November", subject: "Religion Studies", paperName: "Paper 2 (Afrikaans)", paperFile: "Religion Studies P2 Nov 2025 Afr.pdf", memoFile: "Religion Studies P2 Nov 2025 MG Afr.pdf", hasMemo: true },
 
-    // ========== MARINE SCIENCES 2025 ==========
-    { year: "2025", session: "November", subject: "Marine Sciences", paperName: "Paper 1 (English)", paperFile: "Marine Sciences P1 Nov 2025 Eng.pdf", memoFile: "Marine Sciences P1 Nov 2025 MG Eng.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Marine Sciences", paperName: "Paper 1 (Afrikaans)", paperFile: "Marine Sciences P1 Nov 2025 Afr.pdf", memoFile: null, hasMemo: false },
-    { year: "2025", session: "November", subject: "Marine Sciences", paperName: "Paper 2 (English)", paperFile: "Marine Sciences P2 Nov 2025 Eng.pdf", memoFile: "Marine Sciences P2 Nov 2025 MG Eng.pdf", hasMemo: true },
-    { year: "2025", session: "November", subject: "Marine Sciences", paperName: "Paper 2 (Afrikaans)", paperFile: "Marine Sciences P2 Nov 2025 Afr.pdf", memoFile: null, hasMemo: false },
 
     // ========== MECHANICAL TECHNOLOGY 2025 ==========
     // Automotive
